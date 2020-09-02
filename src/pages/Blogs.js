@@ -9,12 +9,11 @@ import FeaturedPost from "../components/blog_specs/featured_post";
 import Main from "../components/blog_specs/main";
 import post1 from "../components/blog_specs/blog-post-1.md";
 import post2 from "../components/blog_specs/blog-post-2.md";
-import post3 from "../components/blog_specs/blog-post-3.md";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
-    marginTop: theme.spacing(3)
-  }
+    marginTop: theme.spacing(3),
+  },
 }));
 
 const sections = [
@@ -22,16 +21,16 @@ const sections = [
   { title: "Design", url: "#" },
   { title: "Culture", url: "#" },
   { title: "Business", url: "#" },
-  { title: "Opportunities", url: "#" }
+  { title: "Opportunities", url: "#" },
 ];
 
 const mainFeaturedPost = {
   title: "How the pandemic opened my eyes",
   description:
-    "After long hours of researching and reading about computer science student opportunites, I learned that formal education....",
+    "After long hours of researching and reading about computer science student opportunities, I learned that formal education....",
   image: "https://source.unsplash.com/random",
-  imgText: "Education and Opportunites",
-  linkText: "Continue reading…"
+  imgText: "Education and Opportunities",
+  linkText: "Continue reading…",
 };
 
 const featuredPosts = [
@@ -39,21 +38,20 @@ const featuredPosts = [
     title: "Eating your frog well",
     date: "Nov 12",
     description:
-      "Do you also procastinate? Take two minutes to read what the book 'Eat your frog' suggests.",
+      "Do you also procrastinate? Take two minutes to read what the book 'Eat your frog' has to say about it.",
     image: "https://source.unsplash.com/random",
-    imageText: "Image Text"
+    imageText: "Coming Soon",
   },
   {
-    title: "Things you can do to come out competent after the lockdown",
+    title: "Things you can do to come out competent after the lock-down",
     date: "Nov 11",
-    description:
-      "Competitions, Hackathons, CTFs, Volunteering, Learning Ops.",
+    description: "Competitions, Hackathons, CTFs, Volunteering, Learning Ops.",
     image: "https://source.unsplash.com/random",
-    imageText: "Image Text"
-  }
+    imageText: "Coming Soon",
+  },
 ];
 
-const posts = [post1, post2, post3];
+const posts = [post1, post2];
 
 export default function Blog() {
   const classes = useStyles();
