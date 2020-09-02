@@ -15,19 +15,19 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
+    backgroundColor: theme.palette.secondary.main,
   },
   form: {
     width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(2)
+    marginTop: theme.spacing(2),
   },
   submit: {
-    margin: theme.spacing(2, 0, 2)
-  }
+    margin: theme.spacing(2, 0, 2),
+  },
 }));
 
 export default function Contact() {
@@ -39,7 +39,7 @@ export default function Contact() {
       <div className={classes.paper}>
         <Avatar />
         <Typography component="h1" variant="h5">
-          Write Me Something
+          Let's Find You a Solution
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
