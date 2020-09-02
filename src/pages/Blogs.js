@@ -1,0 +1,80 @@
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
+import Header from "../components/blog_specs/header";
+import MainFeaturedPost from "../components/blog_specs/main_featured_post";
+import FeaturedPost from "../components/blog_specs/featured_post";
+import Main from "../components/blog_specs/main";
+import post1 from "../components/blog_specs/blog-post-1.md";
+import post2 from "../components/blog_specs/blog-post-2.md";
+import post3 from "../components/blog_specs/blog-post-3.md";
+
+const useStyles = makeStyles((theme) => ({
+  mainGrid: {
+    marginTop: theme.spacing(3)
+  }
+}));
+
+const sections = [
+  { title: "Technology", url: "#" },
+  { title: "Design", url: "#" },
+  { title: "Culture", url: "#" },
+  { title: "Business", url: "#" },
+  { title: "Opportunities", url: "#" }
+];
+
+const mainFeaturedPost = {
+  title: "How the pandemic opened my eyes",
+  description:
+    "After long hours of researching and reading about computer science student opportunites, I learned that formal education....",
+  image: "https://source.unsplash.com/random",
+  imgText: "Education and Opportunites",
+  linkText: "Continue reading…"
+};
+
+const featuredPosts = [
+  {
+    title: "Eating your frog well",
+    date: "Nov 12",
+    description:
+      "Do you also procastinate? Take two minutes to read what the book 'Eat your frog' suggests.",
+    image: "https://source.unsplash.com/random",
+    imageText: "Image Text"
+  },
+  {
+    title: "Things you can do to come out competent after the lockdown",
+    date: "Nov 11",
+    description:
+      "Competitions, Hackathons, CTFs, Volunteering, Learning Ops.",
+    image: "https://source.unsplash.com/random",
+    imageText: "Image Text"
+  }
+];
+
+const posts = [post1, post2, post3];
+
+export default function Blog() {
+  const classes = useStyles();
+
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="lg">
+        <Header title="Blog" sections={sections} />
+        <main>
+          <MainFeaturedPost post={mainFeaturedPost} />
+          <Grid container spacing={4}>
+            {featuredPosts.map((post) => (
+              <FeaturedPost key={post.title} post={post} />
+            ))}
+          </Grid>
+          <Grid container spacing={5} className={classes.mainGrid}>
+            <Main title="Suggested Reads" posts={posts} />
+          </Grid>
+        </main>
+      </Container>
+    </React.Fragment>
+  );
+}

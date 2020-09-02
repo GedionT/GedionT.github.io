@@ -1,0 +1,32 @@
+.App {
+  padding-top: 20px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.circular-square {
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.navigation-container {
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
+}
+
+.board {
+  margin-top: 5px;
+  padding-top: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  align-content: center;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  display: block;
+  width: 99%;
+}
