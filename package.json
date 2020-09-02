@@ -1,7 +1,8 @@
 {
-  "name": "gforce",
+  "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "portfolio page custom-made with react",
+  "homepage": "http://gedion-tesh.me/",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
@@ -33,5 +34,5 @@
     "not ie <= 11",
     "not op_mini all"
   ]
-},
-"homepage": "http://gedion-tesh.me/"
+}
+
