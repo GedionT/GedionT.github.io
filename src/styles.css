@@ -5,7 +5,7 @@
 }
 
 .circular-square {
-  border-radius: 50%;
+  border-radius: 15%;
   border-width: 2px;
   border-style: solid;
 }
