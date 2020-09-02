@@ -7,8 +7,8 @@ import Header from "../components/blog_specs/header";
 import MainFeaturedPost from "../components/blog_specs/main_featured_post";
 import FeaturedPost from "../components/blog_specs/featured_post";
 import Main from "../components/blog_specs/main";
-import post1 from "../components/blog_specs/blog-post-1.md";
-import post2 from "../components/blog_specs/blog-post-2.md";
+import post1 from "../components/blog_specs/blog-post1.md";
+import post2 from "../components/blog_specs/blog-post2.md";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
