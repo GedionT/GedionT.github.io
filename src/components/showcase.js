@@ -14,84 +14,81 @@ import Header from "./header_main";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
   },
   heroContent: {
     backgroundColor: "#ffffff",
-    padding: theme.spacing(4, 0, 2)
+    padding: theme.spacing(4, 0, 2),
   },
   heroButtons: {
-    marginTop: theme.spacing(2)
+    marginTop: theme.spacing(2),
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8)
+    paddingBottom: theme.spacing(8),
   },
   card: {
     height: "100%",
     display: "block",
-    flexDirection: "column"
+    flexDirection: "column",
   },
   cardMedia: {
-    paddingTop: "56.25%" // 16:9
+    paddingTop: "56.25%", // 16:9
   },
   cardContent: {
-    flexGrow: 1
-  }
+    flexGrow: 1,
+  },
 }));
 
 const cards = [
   {
     id: 1,
     name: "Melodify",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSuatjz62upsEy_2e_GRu66RFUxT2QWVRQVeQ&usqp=CAU",
+    image: "/images/Melodify.png",
     link: "https://melodi-fy.web.app",
     desc:
-      "A website scraper that composes music out of contents [ Hackathon Winner ]"
+      "Hackathon winning project that scrapes any website and then composes music out of contents using math functions on client browser.",
   },
   {
     id: 2,
     name: "Buzzo",
-    image: "",
+    image: "/images/Buzzo.PNG",
     link: "",
     desc:
-      "A Cross-platform application that serves a content market and merchndaize distribution channel"
+      "A Cross-platform application that serves as a place to connect fans with their idols. It also helps celebrities to get fair pay for their contents and merchandises",
   },
   {
     id: 3,
     name: "SmartVille",
-    image:
-      "https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_thumbnail_photos/000/781/770/datas/medium.PNG",
+    image: "/images/SmartVille.PNG",
     link: "https://devpost.com/software/smart-wast-management-system",
     desc:
-      "A dashboard that works along IoT devices to modernize city wide waste management"
+      "A dashboard that works along IoT devices to modernize city wide waste management",
   },
   {
     id: 4,
     name: "Jember",
-    image: "",
-    link: "",
+    image: "/images/Jember.PNG",
+    link: "https://www.github.com/GedionT/JemberAPI.git",
     desc:
-      "An LMS that will help you to never forget assignment submissions for your remote classes and helps ease your research by composing excerpts"
+      "An LMS that will help you to never forget assignment submissions for your remote classes and helps ease your research by composing excerpts",
   },
   {
     id: 5,
     name: "BandMetro",
-    image:
-      "https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_thumbnail_photos/000/623/223/datas/medium.png",
+    image: "/images/BandMetro.PNG",
     link: "https://devpost.com/software/bandmetro",
     desc:
-      "A mobile app that syncronizes your entire bands syncopation over an ad-hoc newtwork"
+      "A mobile app that synchronizes your entire bands syncopation like a metronome does over an ad-hoc network",
   },
   {
     id: 6,
-    image: "",
+    image: "/images/DefHacks.PNG",
     name: "DefHacks-Learn",
     link: "",
     desc:
-      "A website for students in the DefHacks network to begin learning entry level CS"
-  }
+      "A website underdevelopment for students in the DefHacks network to begin learning entry level CS",
+  },
 ];
 
 export default function ShowCase() {
@@ -150,7 +147,7 @@ export default function ShowCase() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image={classes.image}
+                    image={card.image}
                     title={card.name}
                   />
                   <CardContent className={classes.cardContent}>
