@@ -44,7 +44,7 @@ const cards = [
   {
     id: 1,
     name: "Melodify",
-    image: "/images/Melodify.png",
+    image: "/images/Melodify.PNG",
     link: "https://melodi-fy.web.app",
     desc:
       "Hackathon winning project that scrapes any website and then composes music out of contents using math functions on client browser.",
@@ -60,7 +60,7 @@ const cards = [
   {
     id: 3,
     name: "SmartVille",
-    image: "/images/SmartVille.PNG",
+    image: "/images/SmartVille.png",
     link: "https://devpost.com/software/smart-wast-management-system",
     desc:
       "A dashboard that works along IoT devices to modernize city wide waste management",
@@ -76,7 +76,7 @@ const cards = [
   {
     id: 5,
     name: "BandMetro",
-    image: "/images/BandMetro.PNG",
+    image: "/images/BandMetro.png",
     link: "https://devpost.com/software/bandmetro",
     desc:
       "A mobile app that synchronizes your entire bands syncopation like a metronome does over an ad-hoc network",
