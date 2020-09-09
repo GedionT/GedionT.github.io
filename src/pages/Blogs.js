@@ -35,10 +35,10 @@ const mainFeaturedPost = {
 
 const featuredPosts = [
   {
-    title: "Eating your frog well",
+    title: "Eating your frogs well",
     date: "Nov 12",
     description:
-      "Do you also procrastinate? Take two minutes to read what the book 'Eat your frog' has to say about it.",
+      "Do you also procrastinate? Take two minutes to read what the book 'Eat that frog' has to say about it.",
     image: "https://source.unsplash.com/random",
     imageText: "Coming Soon",
   },
