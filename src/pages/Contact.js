@@ -12,7 +12,7 @@ import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(1),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -41,13 +41,13 @@ export default function Contact() {
         <Typography component="h1" variant="h5">
           Let's Find You a Solution
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} method="POST" noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
                 autoComplete="fname"
                 name="firstName"
-                variant="outlined"
+                variant="filled"
                 required
                 fullWidth
                 id="firstName"
@@ -57,7 +57,7 @@ export default function Contact() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                variant="outlined"
+                variant="filled"
                 required
                 fullWidth
                 id="lastName"
@@ -68,7 +68,7 @@ export default function Contact() {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                variant="outlined"
+                variant="filled"
                 required
                 fullWidth
                 id="email"
@@ -79,7 +79,7 @@ export default function Contact() {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                variant="outlined"
+                variant="filled"
                 required
                 fullWidth
                 multiline
@@ -93,7 +93,7 @@ export default function Contact() {
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
+                label="I want to be added in future mailing list and email notification."
               />
             </Grid>
           </Grid>
