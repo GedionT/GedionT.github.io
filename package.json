@@ -18,6 +18,7 @@
     "react-scripts": "^3.4.3"
   },
   "devDependencies": {
+    "raw.macro": "^0.4.2",
     "typescript": "3.8.3"
   },
   "scripts": {
@@ -35,4 +36,3 @@
     "not op_mini all"
   ]
 }
-
