@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "../components/avatar";
 import { Button } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -32,6 +32,30 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Contact() {
   const classes = useStyles();
+  const [message, setMessage] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    description: "",
+    sub: false,
+  });
+
+  const onChange = (e) => {
+    const value = e.target.value;
+    setMessage({
+      ...message,
+      [e.target.name]: value,
+    });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    // axios
+    //   .post("/site")
+    //   .then((res) => {})
+    //   .catch((err) => res.json("error:", err));
+    console.log("yeshh");
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -41,7 +65,7 @@ export default function Contact() {
         <Typography component="h1" variant="h5">
           Let's Find You a Solution
         </Typography>
-        <form className={classes.form} method="POST" noValidate>
+        <form className={classes.form} onSubmit={onSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -49,6 +73,8 @@ export default function Contact() {
                 name="firstName"
                 variant="filled"
                 required
+                value={message.firstName}
+                onChange={onChange}
                 fullWidth
                 id="firstName"
                 label="First Name"
@@ -59,6 +85,8 @@ export default function Contact() {
               <TextField
                 variant="filled"
                 required
+                value={message.lastName}
+                onChange={onChange}
                 fullWidth
                 id="lastName"
                 label="Last Name"
@@ -70,6 +98,8 @@ export default function Contact() {
               <TextField
                 variant="filled"
                 required
+                value={message.email}
+                onChange={onChange}
                 fullWidth
                 id="email"
                 label="Email Address"
@@ -81,10 +111,12 @@ export default function Contact() {
               <TextField
                 variant="filled"
                 required
+                value={message.description}
+                onChange={onChange}
                 fullWidth
                 multiline
                 rows={4}
-                name="message"
+                name="description"
                 label="Message Description"
                 type="textarea"
                 id="message"
@@ -92,7 +124,13 @@ export default function Contact() {
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                control={
+                  <Checkbox
+                    value={message.sub}
+                    onChange={onChange}
+                    color="primary"
+                  />
+                }
                 label="I want to be added in future mailing list and email notification."
               />
             </Grid>

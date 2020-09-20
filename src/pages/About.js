@@ -14,6 +14,10 @@ const useStyles = makeStyles({
     fontSize: 29,
     textDecoration: "bold",
   },
+  sub: {
+    fontSize: 24,
+    textDecoration: "bold",
+  },
   pos: {
     marginTop: 4,
     marginBottom: 4,
@@ -152,7 +156,14 @@ const About = () => {
       </Card>
       <br />
       <Card className={classes.root}>
-        <SkillChips skills={skills} />
+        <Grid container>
+          <Grid item xs={3}>
+            <h1 className={classes.sub}>Skills</h1>
+          </Grid>
+          <Grid>
+            <SkillChips skills={skills} />
+          </Grid>
+        </Grid>
       </Card>
     </div>
   );

@@ -9,11 +9,11 @@ import Link from "@material-ui/core/Link";
 const useStyles = makeStyles((theme) => ({
   sidebarAboutBox: {
     padding: theme.spacing(2),
-    backgroundColor: theme.palette.grey[200]
+    backgroundColor: theme.palette.grey[200],
   },
   sidebarSection: {
-    marginTop: theme.spacing(3)
-  }
+    marginTop: theme.spacing(3),
+  },
 }));
 
 export default function Sidebar(props) {
@@ -27,7 +27,28 @@ export default function Sidebar(props) {
           {title}
         </Typography>
       </Paper>
-
+      <script
+        type="text/javascript"
+        src="https://platform.linkedin.com/badges/js/profile.js"
+        async
+        defer
+      ></script>
+      <div
+        class="LI-profile-badge"
+        data-version="v1"
+        data-size="medium"
+        data-locale="en_US"
+        data-type="horizontal"
+        data-theme="light"
+        data-vanity="gedion-teshome"
+      >
+        <a
+          class="LI-simple-link"
+          href="https://et.linkedin.com/in/gedion-teshome?trk=profile-badge"
+        >
+          Gedion Teshome
+        </a>
+      </div>
       <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
         Social
       </Typography>
@@ -47,5 +68,5 @@ export default function Sidebar(props) {
 
 Sidebar.propTypes = {
   social: PropTypes.array,
-  title: PropTypes.string
+  title: PropTypes.string,
 };
