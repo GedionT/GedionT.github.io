@@ -9,7 +9,7 @@ export default function Copyright() {
       <Link
         color="inherit"
         target={"_blank"}
-        href="https://linkdin.com/in/gedion-teshome"
+        href="https://linkedin.com/in/gedion-teshome"
       >
         Gedion Teshome
       </Link>{" "}
