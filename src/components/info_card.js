@@ -11,20 +11,20 @@ import { init } from "ityped";
 const useStyles = makeStyles({
   root: {
     minWidth: 100,
-    position: "center"
+    position: "center",
   },
   bullet: {
     display: "inline-block",
     margin: "0 2px",
-    transform: "scale(0.8)"
+    transform: "scale(0.8)",
   },
   title: {
     fontSize: 36,
-    textDecoration: "bold"
+    textDecoration: "bold",
   },
   pos: {
-    marginBottom: 5
-  }
+    marginBottom: 5,
+  },
 });
 
 export default function InfoCard() {
@@ -33,9 +33,9 @@ export default function InfoCard() {
     init(typed, {
       showCursor: false,
       strings: ["HI, I'M GED"],
-      typeSpeed: 30,
-      startDelay: 800,
-      loop: false
+      typeSpeed: -25,
+      startDelay: 1700,
+      loop: false,
     });
   }, []);
 
