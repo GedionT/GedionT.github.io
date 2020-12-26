@@ -11,7 +11,7 @@ const Home = () => {
   }, []);
 
   return (
-    <Container data-aos="fade-up" maxWidth="sm">
+    <Container data-aos="fade-down" maxWidth="sm">
       <br />
       <br />
       <br />

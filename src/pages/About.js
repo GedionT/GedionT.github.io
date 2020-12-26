@@ -162,7 +162,7 @@ const About = () => {
         </Grid>
       </Card>
       <br />
-      <Card data-aos="flip-right" className={classes.root}>
+      <Card data-aos="fade-left" className={classes.root}>
         <Grid container>
           <Grid item xs={3}>
             <h1 className={classes.sub}>Skills</h1>
