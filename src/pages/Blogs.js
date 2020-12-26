@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
@@ -59,7 +60,13 @@ export default function Blog() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <>
+      <Helmet>
+        <meta charSet="application" />
+        <title>My blogs</title>
+        <link rel="canonical" href="https://gedion-tesh.me" />
+      </Helmet>
+
       <CssBaseline />
       <Container maxWidth="lg">
         <Header title="Blog" sections={sections} />
@@ -75,6 +82,6 @@ export default function Blog() {
           </Grid>
         </main>
       </Container>
-    </React.Fragment>
+    </>
   );
 }

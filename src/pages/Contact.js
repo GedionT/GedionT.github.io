@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import Avatar from "../components/avatar";
 import { Button } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -58,95 +59,103 @@ export default function Contact() {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar />
-        <Typography component="h1" variant="h5">
-          Let's Find You a Solution
-        </Typography>
-        <form className={classes.form} onSubmit={onSubmit}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete="fname"
-                name="firstName"
-                variant="filled"
-                required
-                value={message.firstName}
-                onChange={onChange}
-                fullWidth
-                id="firstName"
-                label="First Name"
-                autoFocus
-              />
+    <>
+      <Helmet>
+        <meta charSet="application" />
+        <title>Enable your business</title>
+        <link rel="canonical" href="https://gedion-tesh.me" />
+      </Helmet>
+
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <div className={classes.paper}>
+          <Avatar />
+          <Typography component="h1" variant="h5">
+            Let's Find You a Solution
+          </Typography>
+          <form className={classes.form} onSubmit={onSubmit}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  autoComplete="fname"
+                  name="firstName"
+                  variant="filled"
+                  required
+                  value={message.firstName}
+                  onChange={onChange}
+                  fullWidth
+                  id="firstName"
+                  label="First Name"
+                  autoFocus
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  variant="filled"
+                  required
+                  value={message.lastName}
+                  onChange={onChange}
+                  fullWidth
+                  id="lastName"
+                  label="Last Name"
+                  name="lastName"
+                  autoComplete="lname"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="filled"
+                  required
+                  value={message.email}
+                  onChange={onChange}
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="filled"
+                  required
+                  value={message.description}
+                  onChange={onChange}
+                  fullWidth
+                  multiline
+                  rows={4}
+                  name="description"
+                  label="Message Description"
+                  type="textarea"
+                  id="message"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      value={message.sub}
+                      onChange={onChange}
+                      color="primary"
+                    />
+                  }
+                  label="I want to be added in future mailing list and email notification."
+                />
+              </Grid>
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                variant="filled"
-                required
-                value={message.lastName}
-                onChange={onChange}
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="lname"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="filled"
-                required
-                value={message.email}
-                onChange={onChange}
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="filled"
-                required
-                value={message.description}
-                onChange={onChange}
-                fullWidth
-                multiline
-                rows={4}
-                name="description"
-                label="Message Description"
-                type="textarea"
-                id="message"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    value={message.sub}
-                    onChange={onChange}
-                    color="primary"
-                  />
-                }
-                label="I want to be added in future mailing list and email notification."
-              />
-            </Grid>
-          </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="secondary"
-            className={classes.submit}
-          >
-            Submit
-          </Button>
-        </form>
-      </div>
-      <br />
-    </Container>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="secondary"
+              className={classes.submit}
+            >
+              Submit
+            </Button>
+          </form>
+        </div>
+        <br />
+      </Container>
+    </>
   );
 }

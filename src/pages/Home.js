@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import InfoCard from "../components/info_card";
 import Container from "@material-ui/core/Container";
 
@@ -11,12 +12,19 @@ const Home = () => {
   }, []);
 
   return (
-    <Container data-aos="fade-down" maxWidth="sm">
-      <br />
-      <br />
-      <br />
-      <InfoCard />
-    </Container>
+    <>
+      <Helmet>
+        <meta charSet="application" />
+        <title>Gedion Teshome - Software Engineer Personal Site</title>
+        <link rel="canonical" href="https://gedion-tesh.me" />
+      </Helmet>
+      <Container data-aos="fade-down" maxWidth="sm">
+        <br />
+        <br />
+        <br />
+        <InfoCard />
+      </Container>
+    </>
   );
 };
 
