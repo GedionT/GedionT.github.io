@@ -6,7 +6,11 @@ export default function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://linkdin.com/in/gedion-teshome">
+      <Link
+        color="inherit"
+        target={"_blank"}
+        href="https://linkdin.com/in/gedion-teshome"
+      >
         Gedion Teshome
       </Link>{" "}
       {new Date().getFullYear()}
