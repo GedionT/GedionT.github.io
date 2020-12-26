@@ -28,22 +28,38 @@ export default function SocialBar() {
         aria-label="large outlined primary button group"
       >
         <Button>
-          <Link color="inherit" href="https://github.com/GedionT">
+          <Link
+            color="inherit"
+            target={"_blank"}
+            href="https://github.com/GedionT"
+          >
             <GitHubIcon />
           </Link>
         </Button>
         <Button>
-          <Link color="inherit" href="https://linkedin.com/in/gedion-teshome">
+          <Link
+            color="inherit"
+            target={"_blank"}
+            href="https://linkedin.com/in/gedion-teshome"
+          >
             <LinkedInIcon />
           </Link>
         </Button>
         <Button>
-          <Link color="inherit" href="https://twitter.com/gedionteshome">
+          <Link
+            color="inherit"
+            target={"_blank"}
+            href="https://twitter.com/gedionteshome"
+          >
             <TwitterIcon />
           </Link>
         </Button>
         <Button>
-          <Link color="inherit" href="https://devpost.com/gedionteshome">
+          <Link
+            color="inherit"
+            target={"_blank"}
+            href="https://devpost.com/gedionteshome"
+          >
             <img src="/images/devpost_logo.png" alt="devpost" width="25px" />
           </Link>
         </Button>
