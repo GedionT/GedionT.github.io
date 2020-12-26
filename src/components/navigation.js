@@ -5,7 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import CodeIcon from "@material-ui/icons/Code";
 import EditIcon from "@material-ui/icons/Edit";
-// import FavoriteIcon from "@material-ui/icons/Favorite";
 import PersonIcon from "@material-ui/icons/PersonPin";
 import HomeIcon from "@material-ui/icons/Home";
 import NoteIcon from "@material-ui/icons/Note";
@@ -14,18 +13,18 @@ import Tooltip from "@material-ui/core/Tooltip";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
-      margin: theme.spacing(0.25)
-    }
+      margin: theme.spacing(0.25),
+    },
   },
   extendedIcon: {
-    marginRight: theme.spacing(0.5)
+    marginRight: theme.spacing(0.5),
   },
   workIcon: {
-    background: "#fff44f"
+    background: "#fff44f",
   },
   phoneIcon: {
-    background: "#e3ff00"
-  }
+    background: "#e3ff00",
+  },
 }));
 
 export default function Navigation() {

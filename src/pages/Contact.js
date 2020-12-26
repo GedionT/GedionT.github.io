@@ -54,7 +54,7 @@ export default function Contact() {
     //   .post("/site")
     //   .then((res) => {})
     //   .catch((err) => res.json("error:", err));
-    console.log("yeshh");
+    console.log("onDev chill");
   };
 
   return (
