@@ -33,7 +33,7 @@ export default function InfoCard() {
     init(typed, {
       showCursor: false,
       strings: ["HI, I'M GED"],
-      typeSpeed: -25,
+      typeSpeed: 60,
       startDelay: 1700,
       loop: false,
     });
