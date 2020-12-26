@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "@material-ui/core";
 import { Card } from "@material-ui/core";
 import { CardActions } from "@material-ui/core";
@@ -11,6 +11,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
 import Header from "./header_main";
+
+import scrollAnimate from "aos";
+import "aos/dist/aos.css";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -94,6 +97,10 @@ const cards = [
 export default function ShowCase() {
   const classes = useStyles();
 
+  useEffect(() => {
+    scrollAnimate.init({ duration: 2500 });
+  }, []);
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -143,7 +150,7 @@ export default function ShowCase() {
           {/* End hero unit */}
           <Grid container spacing={4}>
             {cards.map((card) => (
-              <Grid item key={card.id} xs={12} sm={6} md={4}>
+              <Grid data-aos="fade-up" item key={card.id} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}

@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import SocialBar from "../components/social_bar";
 import SkillChips from "../components/skill_chips";
+
+import scrollAnimate from "aos";
+import "aos/dist/aos.css";
 
 const useStyles = makeStyles({
   root: {
@@ -131,6 +134,10 @@ const skills = [
 
 const About = () => {
   const classes = useStyles();
+  useEffect(() => {
+    scrollAnimate.init({ duration: 2500 });
+  }, []);
+
   return (
     <div className="board">
       <Card className={classes.root}>
@@ -155,7 +162,7 @@ const About = () => {
         </Grid>
       </Card>
       <br />
-      <Card className={classes.root}>
+      <Card data-aos="flip-right" className={classes.root}>
         <Grid container>
           <Grid item xs={3}>
             <h1 className={classes.sub}>Skills</h1>
