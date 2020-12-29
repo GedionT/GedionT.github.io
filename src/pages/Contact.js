@@ -62,7 +62,7 @@ export default function Contact() {
     <>
       <Helmet>
         <meta charSet="application" />
-        <title>Enable your business</title>
+        <title>Let's Enable your business</title>
         <link rel="canonical" href="https://gedion-tesh.me" />
       </Helmet>
 

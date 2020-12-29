@@ -63,7 +63,7 @@ export default function Blog() {
     <>
       <Helmet>
         <meta charSet="application" />
-        <title>My blogs</title>
+        <title>Blogs, Writings, and Publications</title>
         <link rel="canonical" href="https://gedion-tesh.me" />
       </Helmet>
 
