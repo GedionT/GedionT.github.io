@@ -15,6 +15,8 @@ import Header from "./header_main";
 import scrollAnimate from "aos";
 import "aos/dist/aos.css";
 
+import { cards } from "../data.json";
+
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -42,57 +44,6 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
 }));
-
-const cards = [
-  {
-    id: 1,
-    name: "Melodify",
-    image: "/images/Melodify.PNG",
-    link: "https://melodi-fy.web.app",
-    desc:
-      "Hackathon winning project that scrapes any website and then composes music out of contents using math functions on client browser.",
-  },
-  {
-    id: 2,
-    name: "Buzzo",
-    image: "/images/Buzzo.PNG",
-    link: "",
-    desc:
-      "A Cross-platform application that serves as a place to connect fans with their idols. It also helps celebrities to get fair pay for their contents and merchandises",
-  },
-  {
-    id: 3,
-    name: "SmartVille",
-    image: "/images/SmartVille.png",
-    link: "https://devpost.com/software/smart-wast-management-system",
-    desc:
-      "A dashboard that works along IoT devices to modernize city wide waste management",
-  },
-  {
-    id: 4,
-    name: "Jember",
-    image: "/images/Jember.PNG",
-    link: "https://www.github.com/GedionT/JemberAPI.git",
-    desc:
-      "An LMS that will help you to never forget assignment submissions for your remote classes and helps ease your research by composing excerpts",
-  },
-  {
-    id: 5,
-    name: "BandMetro",
-    image: "/images/BandMetro.png",
-    link: "https://devpost.com/software/bandmetro",
-    desc:
-      "A mobile app that synchronizes your entire bands syncopation like a metronome does over an ad-hoc network",
-  },
-  {
-    id: 6,
-    image: "/images/DefHacks.PNG",
-    name: "DefHacks-Learn",
-    link: "",
-    desc:
-      "A website underdevelopment for students in the DefHacks network to begin learning entry level CS",
-  },
-];
 
 export default function ShowCase() {
   const classes = useStyles();
@@ -164,7 +115,12 @@ export default function ShowCase() {
                     <Typography>{card.desc}</Typography>
                   </CardContent>
                   <CardActions>
-                    <Button href={card.link} size="small" color="primary">
+                    <Button
+                      href={card.link}
+                      target={"_blank"}
+                      size="small"
+                      color="primary"
+                    >
                       View
                     </Button>
                   </CardActions>
