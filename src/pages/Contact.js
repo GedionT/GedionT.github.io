@@ -10,7 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import axios from "axios";
+import * as Axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -52,16 +52,24 @@ export default function Contact() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios
-      .post("https://gt-mailer.herokuapp.com/send")
-      .then((res) => res.json(`done: ${res}`))
+    await Axios.post("https://gt-mailer.herokuapp.com/send", {
+      firstName: message.firstName,
+      lastName: message.lastName,
+      email: message.email,
+      description: message.description,
+      sub: message.sub,
+    })
+      .then((res) => console.log(`done: ${res}`))
       .catch((err) => console.log("error:" + err));
   };
 
   return (
     <>
       <Helmet>
-        <meta charSet="application" />
+        <meta
+          name="description"
+          content="Drop a message to contact Gedion Teshome and let's enable your business with tech"
+        />
         <title>Let's Enable your business</title>
         <link rel="canonical" href="https://gedion-tesh.me" />
       </Helmet>
