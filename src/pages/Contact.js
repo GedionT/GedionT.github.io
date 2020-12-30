@@ -10,6 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -49,13 +50,12 @@ export default function Contact() {
     });
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    // axios
-    //   .post("/site")
-    //   .then((res) => {})
-    //   .catch((err) => res.json("error:", err));
-    console.log("onDev chill");
+    await axios
+      .post("https://gt-mailer.herokuapp.com/send")
+      .then((res) => res.json(`done: ${res}`))
+      .catch((err) => console.log("error:" + err));
   };
 
   return (
@@ -139,7 +139,7 @@ export default function Contact() {
                       color="primary"
                     />
                   }
-                  label="I want to be added in future mailing list and email notification."
+                  label="add me in future mailing list and email updates."
                 />
               </Grid>
             </Grid>
