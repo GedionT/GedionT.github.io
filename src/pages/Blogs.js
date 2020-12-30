@@ -63,6 +63,10 @@ export default function Blog() {
     <>
       <Helmet>
         <meta charSet="application" />
+        <meta
+          name="description"
+          content="Blogs and writings: React.js, Web, Tech, Business, Career, Opportunities"
+        />
         <title>Blogs, Writings, and Publications</title>
         <link rel="canonical" href="https://gedion-tesh.me" />
       </Helmet>

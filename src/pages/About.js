@@ -40,6 +40,10 @@ const About = () => {
     <>
       <Helmet>
         <meta charSet="application" />
+        <meta
+          name="description"
+          content="Educational history, skills, and affiliations"
+        />
         <title>Education, Skills, and Experiences</title>
         <link rel="canonical" href="https://gedion-tesh.me" />
       </Helmet>

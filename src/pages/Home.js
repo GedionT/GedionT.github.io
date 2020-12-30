@@ -15,6 +15,10 @@ const Home = () => {
     <>
       <Helmet>
         <meta charSet="application" />
+        <meta
+          name="description"
+          content="Gedion Teshome: Software Engineer, Fullstack Developer, Business advisor, All things tech and entrepreneurship"
+        />
         <title>Gedion Teshome</title>
         <link rel="canonical" href="https://gedion-tesh.me" />
       </Helmet>

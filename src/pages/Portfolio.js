@@ -7,6 +7,10 @@ const Portfolio = () => {
     <>
       <Helmet>
         <meta charSet="application" />
+        <meta
+          name="description"
+          content="Previous projects, portfolio, and activities"
+        />
         <title>Portfolio and Previous Works</title>
         <link rel="canonical" href="https://gedion-tesh.me" />
       </Helmet>
