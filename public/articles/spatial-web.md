@@ -1,0 +1,11 @@
+## The Third Dimension in UI
+
+The web has traditionally been flat. We've spent decades optimizing layouts for 2D grids. But as we move into an era of AR, VR, and high-fidelity 3D rendering in the browser (thanks to WebGPU), depth is becoming a primary information channel.
+
+### Hierarchical Depth
+
+In a spatial UI, depth isn't just an aesthetic flourish—it's hierarchy. By placing critical interactions "closer" to the user using Z-index and parallax, we can reduce cognitive load and create more intuitive flows.
+
+### Performance Constraints
+
+The challenge remains performance. Animating hundreds of "glass" surfaces with real-time blur is computationally expensive. We need to leverage hardware acceleration and selective rendering to maintain 60FPS.
