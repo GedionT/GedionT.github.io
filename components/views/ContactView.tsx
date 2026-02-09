@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GlassCard } from "../GlassCard";
+import { GlassCard } from "../magicui/GlassCard";
 import { Send, Mail, MapPin } from "lucide-react";
 import { AvatarCircles } from "../magicui/AvatarCircles";
 import { Globe } from "../magicui/Globe";

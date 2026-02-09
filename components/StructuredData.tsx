@@ -29,7 +29,7 @@ const StructuredData: React.FC = () => {
           "jobTitle": "AI specialist and software engineer",
           "worksFor": {
             "@type": "Organization",
-            "name": "United Nations Development Programme (UNDP)"
+            "name": "United Nations Development Programme"
           },
           "description": "Data Science, AI, and Software professional specializing in the intersection of High-Performance Backend Systems and Generative AI and studying impacts of emerging AI technology in the space of multi-national organizations.",
           "knowsAbout": [

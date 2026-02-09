@@ -28,7 +28,7 @@ export const DotPattern: React.FC<DotPatternProps> = ({
   return (
     <svg
       aria-hidden="true"
-      className={`pointer-events-none absolute inset-0 h-full w-full fill-slate-400/20 ${className}`}
+      className={`pointer-events-none absolute inset-0 h-full w-full fill-slate-400/60 ${className}`}
       {...props}
     >
       <defs>

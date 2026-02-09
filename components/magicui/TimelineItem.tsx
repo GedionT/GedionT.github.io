@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CareerEvent } from '../types';
+import { CareerEvent } from '../../types';
 import { MapPin, Briefcase } from 'lucide-react';
 
 interface TimelineItemProps {

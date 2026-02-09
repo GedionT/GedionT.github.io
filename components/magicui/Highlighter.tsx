@@ -25,7 +25,7 @@ export const Highlighter: React.FC<HighlighterProps> = ({
 
   return (
     <span
-      className="rounded-md px-1.5 py-0.5"
+      className="rounded-md px-1 py-0.1"
       style={{ backgroundColor: `${color}33`, color: color }}
     >
       {children}

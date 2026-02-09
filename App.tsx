@@ -1,24 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
-import ParticlesBackground from "./components/ParticlesBackground";
-import Dock from "./components/Dock";
+import { HelmetProvider } from "react-helmet-async";
+import ParticlesBackground from "./components/magicui/ParticlesBackground";
+import Dock from "./components/magicui/Dock";
 import HomeView from "./components/views/HomeView";
 import AboutView from "./components/views/AboutView";
 import ProjectsView from "./components/views/ProjectsView";
 import BlogsView from "./components/views/BlogsView";
 import ContactView from "./components/views/ContactView";
 import StructuredData from "./components/StructuredData";
+import { SmoothCursor } from "./components/magicui/SmoothCursor";
+import { DotPattern } from "./components/magicui/DotPattern";
 import { Tab } from "./types";
 
 function App() {
   const [activeTab, setActiveTab] = useState<Tab>(Tab.Home);
-  const { scrollYProgress } = useScroll();
+  // const { scrollYProgress } = useScroll();
 
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+  // const scaleX = useSpring(scrollYProgress, {
+  //   stiffness: 100,
+  //   damping: 30,
+  //   restDelta: 0.001
+  // });
 
   useEffect(() => {
     const titles: Record<Tab, string> = {
@@ -50,37 +53,45 @@ function App() {
   };
 
   return (
-    <div className="relative w-full h-screen perspective-container selection:bg-blue-500/30 bg-[#030712]">
-      <StructuredData />
+    <HelmetProvider>
+      <div className="relative w-full h-screen perspective-container selection:bg-blue-500/30 bg-[#030712]">
+        <StructuredData />
+        <SmoothCursor />
 
-      {/* Scroll Progress Indicator */}
-      <motion.div
+        {/* Background Layer */}
+        <div className="fixed inset-0 pointer-events-none z-0">
+          <DotPattern className="[mask-image:radial-gradient(ellipse_at_center,white,transparent)]" />
+        </div>
+
+        {/* Scroll Progress Indicator */}
+        {/* <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-pink-500 z-[100] origin-left shadow-[0_0_20px_rgba(59,130,246,0.6)]"
         style={{ scaleX }}
-      />
+      /> */}
 
-      <ParticlesBackground />
+        <ParticlesBackground />
 
-      <main className="relative z-10 w-full h-full pt-12 pb-32 overflow-y-auto overflow-x-hidden scroll-smooth">
-        <div className="max-w-7xl mx-auto px-6 flex justify-center min-h-[85vh] items-center">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial="initial"
-              animate="in"
-              exit="out"
-              variants={pageVariants}
-              transition={{ type: "spring", duration: 0.8, bounce: 0.1 }}
-              className="w-full flex justify-center"
-            >
-              {renderContent()}
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </main>
+        <main className="relative z-10 w-full h-full pt-12 pb-32 overflow-y-auto overflow-x-hidden scroll-smooth">
+          <div className="max-w-7xl mx-auto px-6 flex justify-center min-h-[85vh] items-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={{ type: "spring", duration: 0.8, bounce: 0.1 }}
+                className="w-full flex justify-center"
+              >
+                {renderContent()}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </main>
 
-      <Dock activeTab={activeTab} setActiveTab={setActiveTab} />
-    </div>
+        <Dock activeTab={activeTab} setActiveTab={setActiveTab} />
+      </div>
+    </HelmetProvider >
   );
 }
 

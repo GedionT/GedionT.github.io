@@ -34,7 +34,7 @@ const ParticlesBackground: React.FC = () => {
             color: "#3b82f6", // Blue-500
             distance: 150,
             enable: true,
-            opacity: 0.1,
+            opacity: 0.3,
             width: 1,
           },
           move: {

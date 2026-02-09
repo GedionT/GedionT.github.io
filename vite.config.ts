@@ -1,7 +1,10 @@
 import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
+import ViteSitemap from 'vite-plugin-sitemap';
+import { createHtmlPlugin } from 'vite-plugin-html';
 import tailwindcss from '@tailwindcss/vite'
+import { ViteSSG } from 'vite-ssg/single-page';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
@@ -10,17 +13,31 @@ export default defineConfig(({ mode }) => {
       port: 3000,
       host: '0.0.0.0',
     },
-    plugins: [react(), tailwindcss(),],
+    plugins: [
+      react(),
+      ViteSSG(
+      ),
+      ViteSitemap({
+        basePath: 'https://gediont.github.io',
+        generateRobotsTxt: true,
+      }),
+      createHtmlPlugin({
+        minify: true,
+        inject: {
+          data: {
+            title: 'Gedion Teshome Disassa - Systems Architect & Research Software Engineer',
+            description: 'Exploring the intersection of High-Performance Systems and Generative AI. Architecting digital universes through code, with a focus on data, ambient intelligence, and design.',
+          },
+        },
+      }),
+      tailwindcss(),
+    ],
     base: "/",
-    define: {
-      'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
       }
-    }
+    },
   };
 });
 

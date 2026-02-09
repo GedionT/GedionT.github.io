@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { GlassCard } from "../GlassCard";
+import { GlassCard } from "../magicui/GlassCard";
 import { Tab } from "../../types";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { Highlighter } from "../magicui/Highlighter";
@@ -8,7 +8,7 @@ import { VideoText } from "../magicui/VideoText";
 import { ScrollVelocityContainer, ScrollVelocityRow } from "../magicui/ScrollVelocity";
 
 interface HomeViewProps {
-  onChangeTab: (tab: Tab) => void;
+  onChangeTab?: (tab: Tab) => void;
 }
 
 const HomeView: React.FC<HomeViewProps> = ({ onChangeTab }) => {
@@ -56,7 +56,7 @@ const HomeView: React.FC<HomeViewProps> = ({ onChangeTab }) => {
 
           <motion.p variants={item} className="text-xl md:text-2xl text-slate-600 mb-8 font-light leading-snug max-w-2xl mx-auto">
             I architect <span className="text-slate-900 font-medium border-b border-blue-500/20"><Highlighter action="underline" color="#3b82f6">digital universes</Highlighter></span> through code,
-            focusing on the harmony of data, ambient intelligence, and design.
+            focusing on the harmony of data,  <Highlighter color="#8b5cf6">ambient intelligence</Highlighter>, and design.
           </motion.p>
 
           <motion.div variants={item} className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -80,9 +80,11 @@ const HomeView: React.FC<HomeViewProps> = ({ onChangeTab }) => {
           </motion.div>
 
           <motion.div variants={item} className="mt-16 pt-8 border-t border-slate-100 flex flex-wrap justify-center gap-x-12 gap-y-4 text-[10px] text-slate-400 font-mono tracking-widest uppercase">
-            <ScrollVelocityContainer className="font-black uppercase select-none pointer-events-none py-4">
+            <ScrollVelocityContainer className="font-black uppercase select-none pointer-events-none py-2">
               <ScrollVelocityRow baseVelocity={-2} className="mb-2">SYSTEMS ARCHITECTURE • AGENTIC WORKFLOWS • DATA INTELLIGENCE •</ScrollVelocityRow>
-              <ScrollVelocityRow baseVelocity={2}>FULLSTACK SYSTEMS • DISTRIBUTED BACKENDS • CLOUD SCALING •</ScrollVelocityRow>
+            </ScrollVelocityContainer>
+            <ScrollVelocityContainer className="font-black uppercase select-none pointer-events-none py-0">
+              <ScrollVelocityRow baseVelocity={2} className="mb-2">FULLSTACK SYSTEMS • DISTRIBUTED BACKENDS • AMBIENT INTELLIGENCE </ScrollVelocityRow>
             </ScrollVelocityContainer>
           </motion.div>
         </motion.div>

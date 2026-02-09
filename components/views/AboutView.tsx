@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { GlassCard } from "../GlassCard";
+import { GlassCard } from "../magicui/GlassCard";
+import Ged from "../assets/Ged.png";
 import {
   Code2,
   BookOpen,
@@ -10,9 +11,8 @@ import {
   Zap,
   Mic2,
   ShieldCheck,
-  Fingerprint
 } from "lucide-react";
-import { TimelineItem } from "../TimelineItem";
+import { TimelineItem } from "../magicui/TimelineItem";
 import { SOCIAL_LINKS, PUBLICATIONS, TALKS_AND_WORKSHOPS, TECHNICAL_STACK, ACCOMPLISHMENTS, CAREER_TIMELINE } from '../constants';
 
 const AboutView: React.FC = () => {
@@ -65,8 +65,8 @@ const AboutView: React.FC = () => {
                 <span className="text-[10px] font-mono text-blue-600 tracking-[0.2em] uppercase">Verified</span>
               </div>
 
-              <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 mb-6 mx-auto shadow-2xl flex items-center justify-center overflow-hidden">
-                <Fingerprint size={48} className="text-white/40" />
+              <div className="w-38 h-40 rounded-2xl mb-6 mx-auto flex items-center justify-center overflow-hidden">
+                <img src={Ged} alt="Gedion Disassa" className="w-full h-full object-cover object-center" />
               </div>
 
               <div className="text-center mb-8">
@@ -77,7 +77,7 @@ const AboutView: React.FC = () => {
               <div className="space-y-4 flex-1">
                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-100">
                   <span className="block text-[10px] text-slate-400 uppercase tracking-tighter mb-1">Specialization</span>
-                  <span className="text-xs text-slate-900 font-bold">Research Engineer</span>
+                  <span className="text-xs text-slate-900 font-bold">Research Software Engineer</span>
                 </div>
                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-100">
                   <span className="block text-[10px] text-slate-400 uppercase tracking-tighter mb-1">Current</span>
@@ -108,7 +108,6 @@ const AboutView: React.FC = () => {
           <GlassCard className="h-full">
             <div className="space-y-8">
               <header className="space-y-2">
-                <h3 className="text-blue-600 font-mono text-xs tracking-[0.3em] uppercase">Knowledge Profile</h3>
                 <h1 className="text-4xl md:text-6xl font-black text-slate-900 leading-none">
                   Architecting Intelligence.
                 </h1>

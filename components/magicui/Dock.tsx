@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { User, Mail, Home, Code, BookOpen } from "lucide-react";
-import { Tab } from "../types";
+import { Tab } from "../../types";
 
 interface DockProps {
   activeTab: Tab;

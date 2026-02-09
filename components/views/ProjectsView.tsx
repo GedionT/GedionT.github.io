@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { GlassCard } from "../GlassCard";
+import { GlassCard } from "../magicui/GlassCard";
 import { ExternalLink, Github, Search, Cpu, Database, Network } from "lucide-react";
 import { PROJECTS } from "../constants";
 
@@ -18,8 +18,8 @@ const ProjectsView: React.FC = () => {
   }, [search, activeFilter]);
 
   return (
-    <div className="max-w-6xl w-full h-[85vh] flex flex-col pt-12 pb-24">
-      <div className="mb-10 flex flex-col md:flex-row gap-6 items-center px-4">
+    <div className="max-w-6xl w-full flex flex-col pt-12 pb-24">
+      <div className="sticky top-0 z-30 py-4 mb-6 flex flex-col md:flex-row gap-6 items-center px-4 bg-white/40 backdrop-blur-xl border-b border-slate-100/50">
         <div className="relative flex-1 w-full group">
           <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors" size={20} />
           <input
@@ -46,7 +46,12 @@ const ProjectsView: React.FC = () => {
         </div>
       </div>
 
-      <div className="overflow-y-auto px-4 scrollbar-hide flex-1">
+      <div className="px-4">
+        <header className="mb-8 sr-only">
+          <h2>Gedion Disassa's Portfolio Projects</h2>
+          <p>A collection of high-performance backend systems and AI research projects.</p>
+        </header>
+
         <motion.div
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
