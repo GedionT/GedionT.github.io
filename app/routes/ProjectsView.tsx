@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { GlassCard } from "../magicui/GlassCard";
+import { GlassCard } from "../components/magicui/GlassCard";
 import { ExternalLink, Github, Search, Cpu, Database, Network } from "lucide-react";
 import { PROJECTS } from "../constants";
 

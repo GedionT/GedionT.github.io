@@ -1,7 +1,6 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { GlassCard } from "../magicui/GlassCard";
-import Ged from "../assets/Ged.png";
+import { GlassCard } from "../components/magicui/GlassCard";
 import {
   Code2,
   BookOpen,
@@ -12,7 +11,7 @@ import {
   Mic2,
   ShieldCheck,
 } from "lucide-react";
-import { TimelineItem } from "../magicui/TimelineItem";
+import { TimelineItem } from "../components/magicui/TimelineItem";
 import { SOCIAL_LINKS, PUBLICATIONS, TALKS_AND_WORKSHOPS, TECHNICAL_STACK, ACCOMPLISHMENTS, CAREER_TIMELINE } from '../constants';
 
 const AboutView: React.FC = () => {
@@ -66,7 +65,7 @@ const AboutView: React.FC = () => {
               </div>
 
               <div className="w-38 h-40 rounded-2xl mb-6 mx-auto flex items-center justify-center overflow-hidden">
-                <img src={Ged} alt="Gedion Disassa" className="w-full h-full object-cover object-center" />
+                <img src="/Ged.png" alt="Gedion Disassa" className="w-full h-full object-cover object-center" />
               </div>
 
               <div className="text-center mb-8">

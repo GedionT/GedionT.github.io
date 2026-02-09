@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { GlassCard } from "../magicui/GlassCard";
+import { GlassCard } from "../components/magicui/GlassCard";
 import {
   ArrowLeft,
   Clock,
@@ -14,7 +14,7 @@ import {
   Hash,
   Terminal
 } from "lucide-react";
-import Seo from "../Seo";
+import Seo from "../components/Seo";
 import { ArticleMetadata } from "@/types";
 import { articleRegistry } from "../constants";
 

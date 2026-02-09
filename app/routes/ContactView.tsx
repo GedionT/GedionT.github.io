@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { GlassCard } from "../magicui/GlassCard";
+import { GlassCard } from "../components/magicui/GlassCard";
 import { Send, Mail, MapPin } from "lucide-react";
-import { AvatarCircles } from "../magicui/AvatarCircles";
-import { Globe } from "../magicui/Globe";
-import { Terminal, AnimatedSpan, TypingAnimation } from "../magicui/Terminal";
-import { MorphingText } from "../magicui/MorphingText";
+import { AvatarCircles } from "../components/magicui/AvatarCircles";
+import { Globe } from "../components/magicui/Globe";
+import { Terminal, AnimatedSpan, TypingAnimation } from "../components/magicui/Terminal";
+import { MorphingText } from "../components/magicui/MorphingText";
 
 const avatars = [
     { imageUrl: "https://avatars.githubusercontent.com/u/16860528", profileUrl: "https://github.com/gediont" },

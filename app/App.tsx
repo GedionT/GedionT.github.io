@@ -4,15 +4,13 @@ import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import ParticlesBackground from "./components/magicui/ParticlesBackground";
+
 import Dock from "./components/magicui/Dock";
-import HomeView from "./components/views/HomeView";
-import AboutView from "./components/views/AboutView";
-import ProjectsView from "./components/views/ProjectsView";
-import BlogsView from "./components/views/BlogsView";
-import ContactView from "./components/views/ContactView";
-import StructuredData from "./components/StructuredData";
 import { SmoothCursor } from "./components/magicui/SmoothCursor";
 import { DotPattern } from "./components/magicui/DotPattern";
+
+import StructuredData from "./components/StructuredData";
+import { routes } from "./routes";
 
 
 function AnimatedRoutes() {
@@ -27,13 +25,7 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        {[
-          { path: "/", element: <HomeView /> },
-          { path: "/about", element: <AboutView /> },
-          { path: "/projects", element: <ProjectsView /> },
-          { path: "/blogs", element: <BlogsView /> },
-          { path: "/contact", element: <ContactView /> },
-        ].map(({ path, element }) => (
+        {routes.map(({ path, element }) => (
           <Route
             key={path}
             path={path}

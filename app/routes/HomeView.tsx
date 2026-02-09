@@ -1,17 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, Variants } from "framer-motion";
-import { GlassCard } from "../magicui/GlassCard";
+import { GlassCard } from "../components/magicui/GlassCard";
 import { Tab } from "../../types";
 import { ArrowUpRight, Sparkles } from "lucide-react";
-import { Highlighter } from "../magicui/Highlighter";
-import { VideoText } from "../magicui/VideoText";
-import { ScrollVelocityContainer, ScrollVelocityRow } from "../magicui/ScrollVelocity";
+import { Highlighter } from "../components/magicui/Highlighter";
+import { VideoText } from "../components/magicui/VideoText";
+import { ScrollVelocityContainer, ScrollVelocityRow } from "../components/magicui/ScrollVelocity";
 
-interface HomeViewProps {
-  onChangeTab?: (tab: Tab) => void;
-}
+const HomeView: React.FC = () => {
+  const navigate = useNavigate();
 
-const HomeView: React.FC<HomeViewProps> = ({ onChangeTab }) => {
   const container: Variants = {
     hidden: { opacity: 0 },
     show: {
@@ -63,7 +62,7 @@ const HomeView: React.FC<HomeViewProps> = ({ onChangeTab }) => {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 10px 40px rgba(0, 0, 0, 0.1)" }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => onChangeTab(Tab.Contact)}
+              onClick={() => navigate('/contact')}
               className="px-12 py-4 bg-slate-900 text-white font-black rounded-2xl flex items-center gap-3"
             >
               LET'S TALK <ArrowUpRight size={20} />
@@ -72,7 +71,7 @@ const HomeView: React.FC<HomeViewProps> = ({ onChangeTab }) => {
             <motion.button
               whileHover={{ backgroundColor: "rgba(0,0,0,0.03)" }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => onChangeTab(Tab.Projects)}
+              onClick={() => navigate('/projects')}
               className="px-10 py-4 border border-slate-200 text-slate-700 font-bold rounded-2xl"
             >
               VIEW PROJECTS

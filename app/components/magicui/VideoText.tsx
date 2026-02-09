@@ -6,7 +6,7 @@ export const VideoText: React.FC<{
   className?: string;
   speed?: number;
   delay?: number;
-}> = ({ src, children, className = "", speed = 50, delay = 900 }) => {
+}> = ({ src, children, className = "", speed = 90, delay = 900 }) => {
   const [displayText, setDisplayText] = useState("");
 
   useEffect(() => {
