@@ -4,10 +4,11 @@ import react from '@vitejs/plugin-react';
 import ViteSitemap from 'vite-plugin-sitemap';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import tailwindcss from '@tailwindcss/vite'
-import { ViteSSG } from 'vite-ssg/single-page';
+
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
+
   return {
     server: {
       port: 3000,
@@ -15,8 +16,6 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [
       react(),
-      ViteSSG(
-      ),
       ViteSitemap({
         basePath: 'https://gediont.github.io',
         generateRobotsTxt: true,
