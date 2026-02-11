@@ -59,23 +59,23 @@ const HomeView: React.FC = () => {
           </motion.p>
 
           <motion.div variants={item} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <motion.button
+            <motion.a
               whileHover={{ scale: 1.05, boxShadow: "0 10px 40px rgba(0, 0, 0, 0.1)" }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => console.log('/contact')}
+              href="/contact"
               className="px-12 py-4 bg-slate-900 text-white font-black rounded-2xl flex items-center gap-3"
             >
               LET'S TALK <ArrowUpRight size={20} />
-            </motion.button>
+            </motion.a>
 
-            <motion.button
+            <motion.a
               whileHover={{ backgroundColor: "rgba(0,0,0,0.03)" }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => console.log('/projects')}
+              href="/projects"
               className="px-10 py-4 border border-slate-200 text-slate-700 font-bold rounded-2xl"
             >
               VIEW PROJECTS
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           <motion.div variants={item} className="mt-16 pt-8 border-t border-slate-100 flex flex-wrap justify-center gap-x-12 gap-y-4 text-[10px] text-slate-400 font-mono tracking-widest uppercase">
