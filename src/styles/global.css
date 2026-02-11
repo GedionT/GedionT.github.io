@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Alliance";
+    src: url('https://fonts.cdnfonts.com/css/alliance-no1.woff') format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@theme {
+    /* Custom Colors */
+    --color-cyber-dark: #ffffff;
+    --color-cyber-accent: #2563eb;
+    --color-cyber-glow: #7c3aed;
+
+    /* Custom Font Family */
+    --font-sans: "Alliance", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #ffffff;
+    font-family: "Alliance", "Inter", sans-serif;
+    color: #0f172a;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.perspective-container {
+    perspective: 1200px;
+}
+
+.noise-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0.02;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@keyframes scan {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.scan-line {
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(37, 99, 235, 0.2),
+            transparent);
+    animation: scan 3s linear infinite;
+}

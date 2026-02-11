@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageTransition from "../components/PageTransition.tsx";
+import ProjectsPage from "../components/routes/ProjectsView.tsx";
+
+export const prerender = true;
+---
+
+<BaseLayout>
+  <head slot="head">
+    <title>Projects – Gedion T.</title>
+    <meta
+      name="description"
+      content="Selected frontend and creative development projects."
+    />
+  </head>
+
+  <PageTransition client:load>
+    <ProjectsPage client:visible />
+  </PageTransition>
+</BaseLayout>

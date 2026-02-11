@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageTransition from "../components/PageTransition.tsx";
+import ContactPage from "../components/routes/ContactView.tsx";
+
+export const prerender = true;
+---
+
+<BaseLayout>
+  <head slot="head">
+    <title>Contact – Gedion T.</title>
+    <meta name="description" content="Get in touch with Gedion T." />
+  </head>
+
+  <PageTransition client:load>
+    <ContactPage client:visible />
+  </PageTransition>
+</BaseLayout>

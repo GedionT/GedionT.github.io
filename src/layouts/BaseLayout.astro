@@ -1,0 +1,48 @@
+---
+import Dock from "../components/magicui/Dock.jsx";
+import ParticlesBackground from "../components/magicui/ParticlesBackground.jsx";
+import { SmoothCursor } from "../components/magicui/SmoothCursor.jsx";
+import { DotPattern } from "../components/magicui/DotPattern.jsx";
+import StructuredData from "../components/StructuredData.jsx";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <StructuredData />
+    <slot name="head" />
+  </head>
+
+  <body class="bg-[#ffffff]">
+    <div class="relative w-full min-h-screen selection:bg-blue-500/30">
+      <!-- Global effects (islands) -->
+      <SmoothCursor client:only="react" />
+
+      <div class="fixed inset-0 pointer-events-none -z-8 opacity-30">
+        <DotPattern
+          className="[mask-image:radial-gradient(ellipse_at_center,white,transparent)]"
+          client:only="react"
+        />
+      </div>
+
+      <div class="fixed inset-0 -z-10 pointer-events-none">
+        <ParticlesBackground client:only="react" />
+      </div>
+
+      <!-- Page content -->
+      <main class="relative z-10 w-full min-h-screen pt-12 pb-32 scroll-smooth">
+        -->
+        <div
+          class="max-w-7xl mx-auto px-6 flex justify-center min-h-[85vh] items-center"
+        >
+          <slot />
+        </div>
+      </main>
+
+      <!-- Dock stays global -->
+      <Dock client:only="react" />
+    </div>
+  </body>
+</html>
