@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageTransition from "../../components/magicui/PageTransition.tsx";
+import { getCollection } from "astro:content";
+import BlogListView from "../../components/routes/BlogListView";
+
+const posts = await getCollection("blog");
+
+const formattedPosts = posts.map((post) => ({
+  id: post.slug,
+  slug: post.slug,
+  ...post.data,
+  filePath: post.body, // or use post.entry?.file if available
+}));
+---
+
+<BaseLayout>
+  <head slot="head">
+    <title>About – Gedion T.</title>
+    <meta
+      name="description"
+      content="About Gedion T, frontend engineer and creative developer."
+    />
+  </head>
+
+  <PageTransition client:load>
+    <BlogListView articles={formattedPosts} client:visible />
+  </PageTransition>
+</BaseLayout>

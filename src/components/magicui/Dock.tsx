@@ -67,7 +67,7 @@ const Dock: React.FC = () => {
     { path: "/", icon: Home, color: "bg-slate-900 text-white", label: "Home" },
     { path: "/about", icon: User, color: "bg-blue-600 text-white", label: "About" },
     { path: "/projects", icon: Code, color: "bg-indigo-600 text-white", label: "Work" },
-    { path: "/blogs", icon: BookOpen, color: "bg-violet-600 text-white", label: "Logs" },
+    { path: "/blog", icon: BookOpen, color: "bg-violet-600 text-white", label: "Logs" },
     { path: "/contact", icon: Mail, color: "bg-pink-600 text-white", label: "Connect" },
   ];
 

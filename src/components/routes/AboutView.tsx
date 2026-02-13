@@ -12,7 +12,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { TimelineItem } from "../magicui/TimelineItem";
-import { SOCIAL_LINKS, PUBLICATIONS, TALKS_AND_WORKSHOPS, TECHNICAL_STACK, ACCOMPLISHMENTS, CAREER_TIMELINE } from '../../constants';
+import { SOCIAL_LINKS, PUBLICATIONS, TALKS_AND_WORKSHOPS, TECHNICAL_STACK, ACCOMPLISHMENTS, CAREER_TIMELINE } from '../../content/constants';
 
 const AboutView: React.FC = () => {
   const container: Variants = {
@@ -65,7 +65,7 @@ const AboutView: React.FC = () => {
                 <span className="text-[10px] font-mono text-blue-600 tracking-[0.2em] uppercase">Verified</span>
               </div>
 
-              <div className="w-38 h-40 rounded-2xl mb-6 mx-auto flex items-center justify-center overflow-hidden">
+              <div className="w-40 h-42 rounded-2xl mb-6 mx-auto flex items-center justify-center overflow-hidden">
                 <img src="/Ged.png" alt="Gedion Disassa" className="w-full h-full object-cover object-center" />
               </div>
 

@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GlassCard } from "../magicui/GlassCard";
 import { ExternalLink, Github, Search, Cpu, Database, Network } from "lucide-react";
-import { PROJECTS } from "../../constants";
+import { PROJECTS } from "../../content/constants";
 
 const ProjectsView: React.FC = () => {
   const [search, setSearch] = useState("");

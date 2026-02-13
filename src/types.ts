@@ -37,6 +37,7 @@ export interface CareerEvent {
 }
 
 export interface ArticleMetadata {
+  slug?: string;
   id: string;
   title: string;
   date: string;

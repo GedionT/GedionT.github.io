@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageTransition from "../../components/magicui/PageTransition.tsx";
+import BlogPostView from "../../components/routes/BlogPostView";
+import { mdxComponents } from "../../components/magicui/mdxComponents";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+
+const { Content } = await post.render();
+---
+
+<BaseLayout>
+  <head slot="head">
+    <title>About – Gedion T.</title>
+    <meta
+      name="description"
+      content="About Gedion T, frontend engineer and creative developer."
+    />
+  </head>
+
+  <PageTransition client:load>
+    <BlogPostView
+      client:load
+      title={post.data.title}
+      date={post.data.date}
+      readingTime={post.data.readingTime}
+    >
+      <Content components={mdxComponents} />
+    </BlogPostView>
+  </PageTransition>
+</BaseLayout>
