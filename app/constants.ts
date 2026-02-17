@@ -115,13 +115,13 @@ export const PUBLICATIONS = [
     {
         title: "SDGi Corpus: A Comprehensive Multilingual Dataset for SDG Classification",
         venue: "CEUR-WS.org, 2024",
-        link: "https://ceur-ws.org/Vol-xxx/",
+        link: "https://ceur-ws.org/Vol-3764/paper3.pdf",
         tags: ["NLP", "Policy", "AI"],
     },
     {
         title: "Long-text Classification for UN SDGs using GNNs",
         venue: "NLP for Social Good, 2024",
-        link: "https://arxiv.org/abs/xxx",
+        link: "https://nlp4social.github.io/nlp4socialgood/#:~:text=4%3A15PM%20%2D%204%3A35PM%20BST%20%3A%20Paper%20Presentation%203%3A%20%22SDGi%20Corpus%3A%20A%20Comprehensive%20Multilingual%20Dataset%20for%20Text%20Classification%20by%20Sustainable%20Development%20Goals%22",
         tags: ["Machine Learning", "Graph Neural Networks"],
     },
     {
@@ -136,14 +136,14 @@ export const TALKS_AND_WORKSHOPS = [
     {
         title: "CaCTüS Symposium Talk",
         details: "Amazon Research Center, Tübingen, 2023",
-        link: "#",
+        link: "https://www.projects.tuebingen.mpg.de/cactues-2023/#:~:text=Gedion%20Teshome%20Disassa",
         tags: ["Computational Neuroscience", "Deep Learning"],
-        thumbnail: "https://example.com/cactus-talk-thumbnail.jpg"
+        thumbnail: "https://www.projects.tuebingen.mpg.de/wp-content/uploads/2023/08/Bearbeitet-Klein-gedion-website-picture-IMG_5713-scaled-e1692314728728.jpg"
     },
     {
         title: "Lessons Learned from Building NLP Products",
         details: "Lanfrica Talks, 2022",
-        link: "#",
+        link: "https://aihub.org/2022/12/12/forthcoming-machine-learning-and-ai-seminars-december-2022-edition/#:~:text=Lessons%20learned%20from%20building%20a%20TTS%20platform%20for%20the%20Amharic%20language%0ASpeaker%3A%20Gedion%20Teshome%20Disassa%0AOrganised%20by%3A%20Lanfrica%0AZoom%20link%20here.",
         tags: ["NLP", "Product"],
         thumbnail: "https://example.com/cactus-talk-thumbnail.jpg"
 
@@ -165,9 +165,9 @@ export const TALKS_AND_WORKSHOPS = [
 ]
 
 export const TECHNICAL_STACK = [
-    { label: 'Backend', items: ['Python', 'Rust', 'Go', 'Elixir'] },
+    { label: 'Backend', items: ['Python', 'JavaScript', 'Go', 'C++'] },
     { label: 'AI/ML', items: ['PyTorch', 'LangChain', 'OpenAI', 'RAG'] },
-    { label: 'Infra', items: ['GCP', 'Docker', 'Kafka', 'PostgreSQL'] },
+    { label: 'Infra', items: ['GCP', 'Azure', 'Docker', 'Kafka', 'PostgreSQL'] },
 ]
 
 export const ACCOMPLISHMENTS = [

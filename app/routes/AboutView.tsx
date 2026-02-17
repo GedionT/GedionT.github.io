@@ -64,8 +64,8 @@ const AboutView: React.FC = () => {
                 <span className="text-[10px] font-mono text-blue-600 tracking-[0.2em] uppercase">Verified</span>
               </div>
 
-              <div className="w-38 h-40 rounded-2xl mb-6 mx-auto flex items-center justify-center overflow-hidden">
-                <img src="/Ged.png" alt="Gedion Disassa" className="w-full h-full object-cover object-center" />
+              <div className="w-42 h-40 rounded-2xl mb-6 mx-auto flex items-center justify-center overflow-hidden">
+                <img src="/Ged.png" alt="Gedion Disassa - Picture in Blue Suit" className="w-full h-full object-cover object-center" />
               </div>
 
               <div className="text-center mb-8">

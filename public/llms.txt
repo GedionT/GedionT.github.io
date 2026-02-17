@@ -3,9 +3,9 @@
 Gedion Teshome Disassa is a Lead Software Architect and AI Engineer specializing in high-performance backend systems, agentic workflows, and distributed data intelligence.
 
 ## Technical Skills
-- Languages: Python, Rust, Go, Elixir, C++
-- AI/ML: LLMs, RAG, Agentic Frameworks, PyTorch
-- Infrastructure: GCP, Docker, Kafka, PostgreSQL, Distributed Systems
+- Languages: Python, Javascript, Go, C++
+- AI/ML: LLMs, RAG, Agentic Frameworks, PyTorch, Langchain, Mechanistic Interpretation
+- Infrastructure: Azure, GCP, Docker, Kafka, PostgreSQL, Distributed Systems
 
 ## Key Projects
 - UNDP CHAT

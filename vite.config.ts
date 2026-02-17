@@ -17,8 +17,15 @@ export default defineConfig(({ mode }) => {
     plugins: [
       react(),
       ViteSitemap({
-        basePath: 'https://gediont.github.io',
+        hostname: 'https://gediont.github.io',
         generateRobotsTxt: true,
+        dynamicRoutes: [
+          '/',
+          '/about',
+          '/projects',
+          '/blogs',
+          '/contact'
+        ],
       }),
       createHtmlPlugin({
         minify: true,
