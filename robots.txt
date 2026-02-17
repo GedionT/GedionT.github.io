@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://localhost/sitemap.xml
+Sitemap: https://gediont.github.io/sitemap.xml
