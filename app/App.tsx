@@ -1,9 +1,7 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-
-import ParticlesBackground from "./components/magicui/ParticlesBackground";
 
 import Dock from "./components/magicui/Dock";
 import { SmoothCursor } from "./components/magicui/SmoothCursor";
@@ -12,6 +10,7 @@ import { DotPattern } from "./components/magicui/DotPattern";
 import StructuredData from "./components/StructuredData";
 import { routes } from "./routes";
 
+const ParticlesBackground = React.lazy(() => import("./components/magicui/ParticlesBackground"));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -38,7 +37,7 @@ function AnimatedRoutes() {
                 transition={{ type: "spring", duration: 0.8, bounce: 0.1 }}
                 className="w-full flex justify-center"
               >
-                {element}
+                <Suspense fallback={null}>{element}</Suspense>
               </motion.div>
             }
           />
@@ -50,10 +49,11 @@ function AnimatedRoutes() {
 
 // ---- Main App ----
 function App() {
+  const basename = import.meta.env.BASE_URL === "/" ? undefined : import.meta.env.BASE_URL;
 
   return (
     <HelmetProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <div className="relative w-full h-screen perspective-container selection:bg-blue-500/30 bg-[#030712]">
           <StructuredData />
           <SmoothCursor />
@@ -63,7 +63,9 @@ function App() {
             <DotPattern className="[mask-image:radial-gradient(ellipse_at_center,white,transparent)]" />
           </div>
 
-          <ParticlesBackground />
+          <Suspense fallback={null}>
+            <ParticlesBackground />
+          </Suspense>
 
           {/* Content */}
           <main className="relative z-10 w-full h-full pt-12 pb-32 overflow-y-auto overflow-x-hidden scroll-smooth">

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "mechanistic-governance",
+    "title": "Mechanistic Interpretability Is Governance, Not Just Debugging",
+    "date": "2026-07-07",
+    "readingTime": "5 min read",
+    "excerpt": "A field guide for treating model internals as civic infrastructure: not mystical transparency, but inspectable constraints.",
+    "filePath": "articles/mechanistic-governance.md",
+    "tags": ["AI", "Governance", "Interpretability"],
+    "relatedArticles": ["ai-workflows", "forward-deployed-agentic-workflows", "peer-to-peer-pear-runtime"],
+    "relatedProjects": ["synapse-agent-mesh", "aegis-vault", "lumina-inference-engine"]
+  },
+  {
+    "id": "projection-mapping",
+    "title": "Projection Mapping and the Return of Public Computation",
+    "date": "2026-06-30",
+    "readingTime": "4 min read",
+    "excerpt": "Projection mapping turns architecture into an interface, and reminds technologists that computation can be public, situated, and theatrical.",
+    "filePath": "articles/projection-mapping.md",
+    "tags": ["Art", "Spatial Computing", "Technology"],
+    "relatedArticles": ["crisis-maps-cell-atlases"],
+    "relatedProjects": ["melodify", "bandmetro", "echo-spatial-engine"]
+  },
+  {
+    "id": "crisis-maps-cell-atlases",
+    "title": "From Crisis Maps to Cell Atlases",
+    "date": "2026-06-24",
+    "readingTime": "5 min read",
+    "excerpt": "The same pattern language behind geospatial intelligence for crisis response can help us reason about gene sequencing and cellular neighborhoods.",
+    "filePath": "articles/crisis-maps-cell-atlases.md",
+    "tags": ["Geospatial AI", "Genomics", "Biology"],
+    "relatedArticles": ["projection-mapping", "forward-deployed-agentic-workflows"],
+    "relatedProjects": ["echo-spatial-engine", "smartville"]
+  },
+  {
+    "id": "ai-workflows",
+    "title": "AI Workflows Need Institutions, Not Just Agents",
+    "date": "2026-06-17",
+    "readingTime": "4 min read",
+    "excerpt": "Agentic software becomes useful when it carries memory, accountability, review, and handoff instead of only speed.",
+    "filePath": "articles/ai-workflows.md",
+    "tags": ["AI", "Architecture", "Governance"],
+    "relatedArticles": ["mechanistic-governance", "forward-deployed-agentic-workflows", "peer-to-peer-pear-runtime"],
+    "relatedProjects": ["synapse-agent-mesh", "lumina-inference-engine", "jember"]
+  },
+  {
+    "id": "forward-deployed-agentic-workflows",
+    "title": "Forward-Deployed Engineering for Agentic Workflows",
+    "date": "2026-07-07",
+    "readingTime": "5 min read",
+    "excerpt": "Why the Palantir-style forward deployed software engineer model matters for AI agents: context, field contact, systems thinking, and responsible branching workflows.",
+    "filePath": "articles/forward-deployed-agentic-workflows.md",
+    "tags": ["Agentic AI", "Systems Thinking", "Software Engineering"],
+    "relatedArticles": ["ai-workflows", "mechanistic-governance", "crisis-maps-cell-atlases", "peer-to-peer-pear-runtime"],
+    "relatedProjects": ["synapse-agent-mesh", "echo-spatial-engine", "smartville"]
+  },
+  {
+    "id": "peer-to-peer-pear-runtime",
+    "title": "Peer-to-Peer Software After the Cloud",
+    "date": "2026-07-07",
+    "readingTime": "5 min read",
+    "excerpt": "Pear, Hypercore, Hyperswarm, and the return of peer-to-peer software as a serious systems pattern for resilient apps, local-first data, and user-owned infrastructure.",
+    "filePath": "articles/peer-to-peer-pear-runtime.md",
+    "tags": ["Peer-to-Peer", "Distributed Systems", "Technology"],
+    "relatedArticles": ["ai-workflows", "forward-deployed-agentic-workflows", "mechanistic-governance"],
+    "relatedProjects": ["nexa-vector-db", "synapse-agent-mesh", "echo-spatial-engine"]
+  }
+]

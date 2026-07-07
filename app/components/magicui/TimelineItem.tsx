@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CareerEvent } from '../../types';
+import type { CareerEvent } from '../../../types';
 import { MapPin, Briefcase } from 'lucide-react';
 
 interface TimelineItemProps {
@@ -29,9 +29,12 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ event, isLast, index
                     <img
                         src={event.logo}
                         alt={event.organization}
+                        loading="lazy"
+                        decoding="async"
+                        referrerPolicy="no-referrer"
                         className="max-w-full max-h-full object-contain"
                         onError={(e) => {
-                            (e.target as HTMLImageElement).src = `https://picsum.photos/seed/${index}/100/100`;
+                            (e.currentTarget as HTMLImageElement).style.display = "none";
                         }}
                     />
                 </div>

@@ -1,0 +1,276 @@
+[
+  {
+    "id": 0,
+    "slug": "lumina-inference-engine",
+    "title": "Lumina Inference Engine",
+    "description": "Distributed GPU-accelerated inference gateway for custom LLMs with real-time semantic caching.",
+    "tags": [
+      "AI Infra",
+      "Backend"
+    ],
+    "tech": [
+      "Python",
+      "Rust",
+      "CUDA",
+      "Redis"
+    ],
+    "relatedArticles": [
+      "ai-workflows",
+      "mechanistic-governance",
+      "forward-deployed-agentic-workflows"
+    ],
+    "caseStudy": {
+      "summary": "A low-latency inference gateway design for serving custom language models without losing control of cost, quality, and observability.",
+      "challenge": "Agentic systems can create bursty, repeated model calls. The useful layer is not just faster GPUs; it is a gateway that can cache, route, evaluate, and explain inference decisions.",
+      "approach": [
+        "Separated the Python orchestration layer from Rust hot paths for request normalization, cache checks, and streaming response control.",
+        "Used semantic caching to reuse high-confidence responses while keeping cache misses observable for evaluation.",
+        "Treated every model call as an auditable event with latency, cost, prompt family, and downstream workflow context."
+      ],
+      "outcome": [
+        "Reduced redundant inference work in repeatable agent flows.",
+        "Created a stronger operational boundary between prototypes and production AI services.",
+        "Made governance measurable through logs, routing policy, and failure-mode analysis."
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "slug": "echo-spatial-engine",
+    "title": "Echo Spatial Engine",
+    "description": "Geospatial data processor for tracking autonomous delivery drones with sub-millisecond latency.",
+    "tags": [
+      "Real-time",
+      "Geo"
+    ],
+    "tech": [
+      "Elixir",
+      "Kafka",
+      "PostGIS"
+    ],
+    "relatedArticles": [
+      "crisis-maps-cell-atlases",
+      "projection-mapping",
+      "forward-deployed-agentic-workflows"
+    ],
+    "caseStudy": {
+      "summary": "A streaming geospatial engine for turning fast-moving location events into operational state.",
+      "challenge": "Crisis, logistics, and robotics workflows all need location data that is both current and explainable. A map without temporal context becomes decoration.",
+      "approach": [
+        "Used Kafka topics to separate ingestion, enrichment, and alerting.",
+        "Used PostGIS for durable spatial queries and historical reconstruction.",
+        "Modeled every event as part of a time-aware operational graph."
+      ],
+      "outcome": [
+        "Supported real-time tracking while keeping old states queryable.",
+        "Connected geospatial intelligence patterns to cellular and biological atlas thinking.",
+        "Made field-facing dashboards more useful by preserving provenance."
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "slug": "melodify",
+    "title": "Melodify",
+    "description": "Hackathon-winning project that scrapes a website and composes music from its content using browser-side math functions.",
+    "tags": [
+      "Hackathon",
+      "Creative Coding"
+    ],
+    "tech": [
+      "Angular",
+      "React",
+      "Puppeteer"
+    ],
+    "image": "/images/Melodify.PNG",
+    "link": "https://melodi-fy.web.app",
+    "relatedArticles": [
+      "projection-mapping"
+    ],
+    "caseStudy": {
+      "summary": "A creative coding experiment that turns the visible web into a playable composition.",
+      "challenge": "Most web analysis tools turn pages into scores, tables, or audits. Melodify asks what happens if a website becomes a performance surface instead.",
+      "approach": [
+        "Extracted page content and structure, then mapped textual and visual signals into musical parameters.",
+        "Kept composition logic in the browser so the experience feels immediate.",
+        "Framed the page as an instrument rather than a document."
+      ],
+      "outcome": [
+        "Connected web scraping, generative art, and interactive composition.",
+        "Created a memorable demo surface for hackathon storytelling.",
+        "Informed later thinking about projection mapping and public computation."
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "slug": "buzzo",
+    "title": "Buzzo",
+    "description": "A cross-platform app for connecting fans with creators while supporting fairer payment for content and merchandise.",
+    "tags": [
+      "Hackathon",
+      "Marketplace"
+    ],
+    "tech": [
+      "Angular",
+      "React",
+      "Puppeteer"
+    ],
+    "image": "/images/Buzzo.PNG",
+    "relatedArticles": [
+      "ai-workflows"
+    ],
+    "caseStudy": {
+      "summary": "A creator-community marketplace prototype focused on fan access, content ownership, and monetization.",
+      "challenge": "Creators often have fragmented relationships with audiences across platforms, payments, and merchandise. The product needed one simple interaction model.",
+      "approach": [
+        "Mapped creator, fan, content, and purchase flows into a cross-platform interface.",
+        "Prioritized lightweight account flows over a heavy marketplace backend.",
+        "Designed around direct creator-audience engagement instead of feed discovery."
+      ],
+      "outcome": [
+        "Clarified the product mechanics behind creator monetization.",
+        "Created a reusable pattern for small social commerce prototypes.",
+        "Strengthened the portfolio link between product thinking and systems thinking."
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "slug": "smartville",
+    "title": "SmartVille",
+    "description": "A dashboard that works with IoT devices to modernize city-wide waste management.",
+    "tags": [
+      "Hackathon",
+      "Civic Tech",
+      "IoT"
+    ],
+    "tech": [
+      "Angular",
+      "React",
+      "Puppeteer"
+    ],
+    "image": "/images/SmartVille.png",
+    "link": "https://devpost.com/software/smart-wast-management-system",
+    "relatedArticles": [
+      "crisis-maps-cell-atlases",
+      "forward-deployed-agentic-workflows"
+    ],
+    "caseStudy": {
+      "summary": "A civic operations dashboard for coordinating IoT waste signals, routing, and city service decisions.",
+      "challenge": "Waste management is a field problem before it is a dashboard problem. Sensors only help when teams can turn readings into route, staffing, and maintenance decisions.",
+      "approach": [
+        "Connected device readings to a dashboard organized around bins, locations, and urgency.",
+        "Used operational status views instead of vanity analytics.",
+        "Framed the prototype around city teams that need quick triage."
+      ],
+      "outcome": [
+        "Showed how civic IoT data can support field operations.",
+        "Created a concrete example of geospatial intelligence for public services.",
+        "Gave the project a natural link to agentic workflows that act with local context."
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "slug": "jember",
+    "title": "Jember",
+    "description": "An LMS assistant for tracking remote-class assignments and composing research excerpts.",
+    "tags": [
+      "Hackathon",
+      "Education"
+    ],
+    "tech": [
+      "Angular",
+      "React",
+      "Puppeteer"
+    ],
+    "image": "/images/Jember.PNG",
+    "link": "https://www.github.com/GedionT/JemberAPI.git",
+    "relatedArticles": [
+      "ai-workflows"
+    ],
+    "caseStudy": {
+      "summary": "A remote-learning assistant for assignment memory, research support, and study continuity.",
+      "challenge": "Remote learners lose context across calendars, LMS tools, notes, and research tabs. The missing feature is often continuity, not more content.",
+      "approach": [
+        "Built around reminders, submission tracking, and excerpt composition.",
+        "Kept the workflow student-centered instead of institution-centered.",
+        "Used automation to reduce forgetfulness without replacing student judgment."
+      ],
+      "outcome": [
+        "Turned scattered learning tasks into one practical workflow.",
+        "Linked education technology to agentic memory and handoff design.",
+        "Created a reusable pattern for task-aware assistants."
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "slug": "bandmetro",
+    "title": "BandMetro",
+    "description": "A mobile app that synchronizes a band's timing like a metronome over an ad-hoc network.",
+    "tags": [
+      "Hackathon",
+      "Real-time"
+    ],
+    "tech": [
+      "Angular",
+      "React",
+      "Puppeteer"
+    ],
+    "image": "/images/BandMetro.png",
+    "link": "https://devpost.com/software/bandmetro",
+    "relatedArticles": [
+      "projection-mapping"
+    ],
+    "caseStudy": {
+      "summary": "A timing coordination prototype for musicians who need shared rhythm without centralized hardware.",
+      "challenge": "Group performance depends on shared timing, but rehearsal contexts are messy: phones, latency, local networks, and human feel all matter.",
+      "approach": [
+        "Modeled synchronization as a lightweight local coordination problem.",
+        "Designed the interface around beat visibility and fast correction.",
+        "Kept the system small enough for hackathon-scale mobile experimentation."
+      ],
+      "outcome": [
+        "Connected real-time systems thinking with performance and art.",
+        "Showed how local context changes the shape of technical correctness.",
+        "Informed later work on public computation and spatial interfaces."
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "slug": "defhacks-learn",
+    "title": "DefHacks-Learn",
+    "description": "A learning site for students in the DefHacks network beginning entry-level computer science.",
+    "tags": [
+      "Hackathon",
+      "Education",
+      "Community"
+    ],
+    "tech": [
+      "Angular",
+      "React",
+      "Puppeteer"
+    ],
+    "image": "/images/DefHacks.PNG",
+    "relatedArticles": [
+      "ai-workflows"
+    ],
+    "caseStudy": {
+      "summary": "A community learning surface for helping new developers find approachable entry points into computer science.",
+      "challenge": "Beginner education is often blocked by confidence and navigation. Students need pathways, not only links.",
+      "approach": [
+        "Organized starter material around approachable CS concepts.",
+        "Kept the interface lightweight so contributors could extend it.",
+        "Built from the perspective of hackathon community onboarding."
+      ],
+      "outcome": [
+        "Supported a stronger bridge from community events to lasting learning.",
+        "Added an education-focused thread to the project portfolio.",
+        "Reinforced the SEO story around mentorship, open source, and technical community."
+      ]
+    }
+  }
+]
