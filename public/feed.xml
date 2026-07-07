@@ -2,19 +2,49 @@
 <rss version="2.0">
   <channel>
     <title>Gedion Disassa Engineering Logs</title>
-    <link>https://gediont.github.io</link>
-    <description>Research and insights into distributed systems, AI orchestration, and high-performance backend architecture.</description>
+    <link>https://gediont.github.io/</link>
+    <description>Essays on AI, technology, governance, geospatial intelligence, biology, and public-interest software.</description>
     <item>
-      <title>Engineering the Spatial Web</title>
-      <link>https://gediont.github.io/blogs/spatial-web</link>
-      <description>Why flat interfaces are hitting a ceiling and how depth-driven design is becoming the new standard.</description>
-      <pubDate>Thu, 24 Oct 2024 00:00:00 GMT</pubDate>
+      <title>Mechanistic Interpretability Is Governance, Not Just Debugging</title>
+      <link>https://gediont.github.io/blogs/mechanistic-governance</link>
+      <guid>https://gediont.github.io/blogs/mechanistic-governance</guid>
+      <description>A field guide for treating model internals as civic infrastructure: not mystical transparency, but inspectable constraints.</description>
+      <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>Scaling AI Native Workflows</title>
+      <title>Projection Mapping and the Return of Public Computation</title>
+      <link>https://gediont.github.io/blogs/projection-mapping</link>
+      <guid>https://gediont.github.io/blogs/projection-mapping</guid>
+      <description>Projection mapping turns architecture into an interface, and reminds technologists that computation can be public, situated, and theatrical.</description>
+      <pubDate>Tue, 30 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>From Crisis Maps to Cell Atlases</title>
+      <link>https://gediont.github.io/blogs/crisis-maps-cell-atlases</link>
+      <guid>https://gediont.github.io/blogs/crisis-maps-cell-atlases</guid>
+      <description>The same pattern language behind geospatial intelligence for crisis response can help us reason about gene sequencing and cellular neighborhoods.</description>
+      <pubDate>Wed, 24 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>AI Workflows Need Institutions, Not Just Agents</title>
       <link>https://gediont.github.io/blogs/ai-workflows</link>
-      <description>Transitioning from traditional software engineering to an agent-orchestrated development environment.</description>
-      <pubDate>Sun, 15 Sep 2024 00:00:00 GMT</pubDate>
+      <guid>https://gediont.github.io/blogs/ai-workflows</guid>
+      <description>Agentic software becomes useful when it carries memory, accountability, review, and handoff instead of only speed.</description>
+      <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Forward-Deployed Engineering for Agentic Workflows</title>
+      <link>https://gediont.github.io/blogs/forward-deployed-agentic-workflows</link>
+      <guid>https://gediont.github.io/blogs/forward-deployed-agentic-workflows</guid>
+      <description>Why the Palantir-style forward deployed software engineer model matters for AI agents: context, field contact, systems thinking, and responsible branching workflows.</description>
+      <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Peer-to-Peer Software After the Cloud</title>
+      <link>https://gediont.github.io/blogs/peer-to-peer-pear-runtime</link>
+      <guid>https://gediont.github.io/blogs/peer-to-peer-pear-runtime</guid>
+      <description>Pear, Hypercore, Hyperswarm, and the return of peer-to-peer software as a serious systems pattern for resilient apps, local-first data, and user-owned infrastructure.</description>
+      <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>

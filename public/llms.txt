@@ -1,16 +1,52 @@
 # Gedion Teshome Disassa
 
-Gedion Teshome Disassa is a Lead Software Architect and AI Engineer specializing in high-performance backend systems, agentic workflows, and distributed data intelligence.
+Gedion Teshome Disassa is a software architect, AI engineer, and research software engineer specializing in high-performance systems, agentic workflows, distributed data intelligence, and governance-oriented technology.
+
+Name variants that refer to the same person: Gedion Teshome Disassa, Gedion Teshome, Gedion Disassa, Gedion T. Disassa, Gedion T Disassa, GedionT, Gedion T.
+
+Public verification and authority signals include the SDGi Corpus paper, UNDP/sdgi-corpus on Hugging Face, ORCID 0009-0000-8552-154X, the CaCTuS 2023 cohort page, MLH Top 50 Hackers 2022, GitHub @gediont, and the Information is Beautiful Awards listing for UNDP Data Futures Exchange.
 
 ## Technical Skills
 - Languages: Python, Javascript, Go, C++
-- AI/ML: LLMs, RAG, Agentic Frameworks, PyTorch, Langchain, Mechanistic Interpretation
-- Infrastructure: Azure, GCP, Docker, Kafka, PostgreSQL, Distributed Systems
+- AI/ML: LLMs, RAG, Agentic Frameworks, PyTorch, Langchain, Mechanistic Interpretability
+- Infrastructure: Azure, GCP, Docker, Kafka, PostgreSQL, PostGIS, Distributed Systems
+- Domains: AI Governance, NLP for Social Good, Geospatial Intelligence, Data Engineering, Projection Mapping, Genomics, Systems Thinking
+- Systems interests: Peer-to-Peer Technology, Pear, Hypercore, Hyperswarm, Local-First Software
+
+## Writing
+- Mechanistic Interpretability Is Governance, Not Just Debugging
+- Projection Mapping and the Return of Public Computation
+- From Crisis Maps to Cell Atlases
+- AI Workflows Need Institutions, Not Just Agents
+- Forward-Deployed Engineering for Agentic Workflows
+- Peer-to-Peer Software After the Cloud
+
+## Tag Landing Pages
+- https://gediont.github.io/blogs/tags/ai
+- https://gediont.github.io/blogs/tags/agentic-ai
+- https://gediont.github.io/blogs/tags/governance
+- https://gediont.github.io/blogs/tags/geospatial-ai
+- https://gediont.github.io/blogs/tags/systems-thinking
+- https://gediont.github.io/blogs/tags/peer-to-peer
+- https://gediont.github.io/blogs/tags/distributed-systems
 
 ## Key Projects
-- UNDP CHAT
-- DFX Data Platform & Data Pipeline
-- Future Trends and Signals System
+- Lumina Inference Engine
+- Nexa Vector DB
+- Synapse Agent Mesh
+- Aegis Vault
+- Echo Spatial Engine
+- Melodify
+- SmartVille
+
+## Public References
+- SDGi Corpus paper: https://ceur-ws.org/Vol-3764/paper3.pdf
+- SDGi Corpus dataset: https://huggingface.co/datasets/UNDP/sdgi-corpus
+- SDGi Corpus repository: https://github.com/UNDP-Data/dsc-sdgi-corpus
+- CaCTuS cohort: https://www.projects.tuebingen.mpg.de/cactues-2023/
+- MLH Top 50 Hackers: https://top.mlh.com/2022/profiles/gedion-teshome
+- GitHub profile: https://github.com/gediont
+- Information is Beautiful Awards: https://www.informationisbeautifulawards.com/showcase/7312-undp-data-futures-exchange
 
 ## Contact
 - Site: https://gediont.github.io

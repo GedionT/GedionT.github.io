@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { canonicalUrl } from '../site';
 
 interface SeoProps {
     title: string;
@@ -12,8 +13,8 @@ interface SeoProps {
 const Seo: React.FC<SeoProps> = ({
     title,
     description,
-    canonical = "https://gediont.github.io/",
-    image = "https://gediont.github.io/og-image.png",
+    canonical = canonicalUrl("/"),
+    image = canonicalUrl("Ged-384.png"),
     type = "website"
 }) => {
     const fullTitle = `${title} | Gedion Disassa`;
@@ -22,6 +23,7 @@ const Seo: React.FC<SeoProps> = ({
         <Helmet>
             <title>{fullTitle}</title>
             <meta name="description" content={description} />
+            <meta name="robots" content="index, follow" />
             <link rel="canonical" href={canonical} />
 
             {/* Open Graph / Facebook */}

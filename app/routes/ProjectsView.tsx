@@ -1,8 +1,12 @@
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { GlassCard } from "../components/magicui/GlassCard";
 import { ExternalLink, Github, Search, Cpu, Database, Network } from "lucide-react";
 import { PROJECTS } from "../constants";
+import Seo from "../components/Seo";
+import { canonicalUrl } from "../site";
+import { projectPath } from "../slugs";
 
 const ProjectsView: React.FC = () => {
   const [search, setSearch] = useState("");
@@ -11,14 +15,22 @@ const ProjectsView: React.FC = () => {
   const filteredProjects = useMemo(() => {
     return PROJECTS.filter(p => {
       const matchesSearch = p.title.toLowerCase().includes(search.toLowerCase()) ||
-        p.description.toLowerCase().includes(search.toLowerCase());
-      const matchesFilter = activeFilter === "All" || p.tech.includes(activeFilter);
+        p.description.toLowerCase().includes(search.toLowerCase()) ||
+        p.tags.join(" ").toLowerCase().includes(search.toLowerCase()) ||
+        p.tech.join(" ").toLowerCase().includes(search.toLowerCase());
+      const matchesFilter = activeFilter === "All" || p.tech.includes(activeFilter) || p.tags.includes(activeFilter);
       return matchesSearch && matchesFilter;
     });
   }, [search, activeFilter]);
 
   return (
-    <div className="max-w-6xl w-full flex flex-col pt-12 pb-24">
+    <>
+      <Seo
+        title="Project Case Studies"
+        description="AI, software, data, geospatial, civic technology, and creative coding case studies by Gedion Disassa."
+        canonical={canonicalUrl("/projects")}
+      />
+      <div className="max-w-6xl w-full flex flex-col pt-12 pb-24">
       <div className="sticky top-0 z-30 py-4 mb-6 flex flex-col md:flex-row gap-6 items-center px-4 bg-white/40 backdrop-blur-xl border-b border-slate-100/50">
         <div className="relative flex-1 w-full group">
           <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors" size={20} />
@@ -73,8 +85,17 @@ const ProjectsView: React.FC = () => {
                       {project.tags.includes("Database") ? <Database size={20} /> : project.tags.includes("Network") ? <Network size={20} /> : <Cpu size={20} />}
                     </div>
                     <div className="flex gap-3 text-slate-400">
-                      <Github size={18} className="hover:text-slate-900 transition-colors cursor-pointer" />
-                      <ExternalLink size={18} className="hover:text-slate-900 transition-colors cursor-pointer" />
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label={`Open ${project.title}`}
+                          className="hover:text-slate-900 transition-colors"
+                        >
+                          {project.link.includes("github.com") ? <Github size={18} /> : <ExternalLink size={18} />}
+                        </a>
+                      )}
                     </div>
                   </div>
 
@@ -84,6 +105,13 @@ const ProjectsView: React.FC = () => {
                   <p className="text-slate-500 text-sm mb-6 leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
+
+                  <Link
+                    to={projectPath(project)}
+                    className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-blue-600 hover:text-slate-900 mb-6"
+                  >
+                    Case Study <ExternalLink size={12} />
+                  </Link>
 
                   <div className="flex flex-wrap gap-2 mt-auto">
                     {project.tech.map(t => (
@@ -110,6 +138,7 @@ const ProjectsView: React.FC = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

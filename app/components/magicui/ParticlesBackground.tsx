@@ -16,7 +16,7 @@ const ParticlesBackground: React.FC = () => {
         background: {
           color: { value: "#ffffff" },
         },
-        fpsLimit: 120,
+        fpsLimit: 60,
         interactivity: {
           events: {
             onHover: { enable: true, mode: "grab" },
@@ -48,7 +48,7 @@ const ParticlesBackground: React.FC = () => {
           },
           number: {
             density: { enable: true, area: 800 },
-            value: 40,
+            value: 32,
           },
           opacity: { value: 0.2 },
           shape: { type: "circle" },

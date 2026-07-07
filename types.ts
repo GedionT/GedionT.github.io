@@ -9,12 +9,20 @@ export enum Tab {
 
 export interface Project {
   id: number;
+  slug: string;
   title: string;
   description: string;
   tags: string[];
   tech: string[];
   link?: string;
   image?: string;
+  relatedArticles?: string[];
+  caseStudy: {
+    summary: string;
+    challenge: string;
+    approach: string[];
+    outcome: string[];
+  };
 }
 
 export interface BlogPost {
@@ -44,4 +52,6 @@ export interface ArticleMetadata {
   excerpt: string;
   filePath: string;
   tags: string[];
+  relatedArticles?: string[];
+  relatedProjects?: string[];
 }

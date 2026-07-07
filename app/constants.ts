@@ -1,5 +1,5 @@
-
-import { CareerEvent, Project, ArticleMetadata } from '../types';
+import type { CareerEvent, Project } from '../types';
+import projects from "../content/projects.json";
 import {
     Linkedin,
     Twitter,
@@ -10,97 +10,7 @@ import {
     Zap
 } from "lucide-react";
 
-export const PROJECTS: Project[] = [
-    {
-        id: 1,
-        title: "Lumina Inference Engine",
-        description: "Distributed GPU-accelerated inference gateway for custom LLMs with real-time semantic caching.",
-        tags: ["AI Infra", "Backend"],
-        tech: ["Python", "Rust", "CUDA", "Redis"],
-    },
-    {
-        id: 2,
-        title: "Nexa Vector DB",
-        description: "A lightweight, edge-optimized vector database designed for high-concurrency retrieval in RAG systems.",
-        tags: ["Database", "Go"],
-        tech: ["Go", "gRPC", "RocksDB", "Protobuf"],
-    },
-    {
-        id: 3,
-        title: "Synapse Agent Mesh",
-        description: "Orchestration layer for autonomous AI agents allowing cross-agent communication and task delegation.",
-        tags: ["AI Agents", "System Design"],
-        tech: ["Python", "Node.js", "Docker", "RabbitMQ"],
-    },
-    {
-        id: 4,
-        title: "Aegis Vault",
-        description: "Hardware-security-module based secrets manager specifically for securing LLM API keys and model weights.",
-        tags: ["Security", "Systems"],
-        tech: ["C++", "Rust", "PostgreSQL"],
-    },
-    {
-        id: 5,
-        title: "Echo Spatial Engine",
-        description: "Geospatial data processor for tracking autonomous delivery drones with sub-millisecond latency.",
-        tags: ["Real-time", "Geo"],
-        tech: ["Elixir", "Kafka", "PostGIS"],
-    },
-    {
-        id: 6,
-        title: "Melodify",
-        description: "Hackathon winning project that scrapes any website and then composes music out of contents using math functions on client browser.",
-        tags: ["hackathon"],
-        tech: ["Angular", "React", "Pupetter"],
-        image: "/images/Melodify.PNG",
-        link: "https://melodi-fy.web.app",
-    },
-    {
-        id: 7,
-        title: "Buzzo",
-        description: "A Cross-platform application that serves as a place to connect fans with their idols. It also helps celebrities to get fair pay for their contents and merchandises",
-        tags: ["hackathon"],
-        tech: ["Angular", "React", "Pupetter"],
-        image: "/images/Buzzo.PNG",
-        link: "",
-    },
-    {
-        id: 8,
-        title: "SmartVille",
-        description: "A dashboard that works along IoT devices to modernize city wide waste management",
-        tags: ["hackathon"],
-        tech: ["Angular", "React", "Pupetter"],
-        image: "/images/SmartVille.png",
-        link: "https://devpost.com/software/smart-wast-management-system",
-    },
-    {
-        id: 9,
-        title: "Jember",
-        description: "An LMS that will help you to never forget assignment submissions for your remote classes and helps ease your research by composing excerpts",
-        tags: ["hackathon"],
-        tech: ["Angular", "React", "Pupetter"],
-        image: "/images/Jember.PNG",
-        link: "https://www.github.com/GedionT/JemberAPI.git",
-    },
-    {
-        id: 10,
-        title: "BandMetro",
-        description: "A mobile app that synchronizes your entire bands syncopation like a metronome does over an ad-hoc network",
-        tags: ["hackathon"],
-        tech: ["Angular", "React", "Pupetter"],
-        image: "/images/BandMetro.png",
-        link: "https://devpost.com/software/bandmetro",
-    },
-    {
-        id: 11,
-        image: "/images/DefHacks.PNG",
-        description: "A website underdevelopment for students in the DefHacks network to begin learning entry level CS",
-        tags: ["hackathon"],
-        tech: ["Angular", "React", "Pupetter"],
-        title: "DefHacks-Learn",
-        link: "",
-    }
-];
+export const PROJECTS = projects as Project[];
 
 
 export const SOCIAL_LINKS = [
@@ -243,23 +153,4 @@ export const CAREER_TIMELINE: CareerEvent[] = [
 ];
 
 
-export const articleRegistry: ArticleMetadata[] = [
-    {
-        id: "spatial-web",
-        title: "Engineering the Spatial Web",
-        date: "2024-10-24",
-        readingTime: "1 min read",
-        excerpt: "Why flat interfaces are hitting a ceiling and how depth-driven design is becoming the new standard.",
-        filePath: "/articles/spatial-web.md",
-        tags: ["UI/UX", "Spatial Computing", "WebGPU"]
-    },
-    {
-        id: "ai-workflows",
-        title: "Scaling AI Native Workflows",
-        date: "2024-09-15",
-        readingTime: "2 min read",
-        excerpt: "Transitioning from traditional software engineering to an agent-orchestrated development environment.",
-        filePath: "/articles/ai-workflows.md",
-        tags: ["AI", "Architecture", "Agents"]
-    }
-];
+export { articleRegistry } from "./articles";

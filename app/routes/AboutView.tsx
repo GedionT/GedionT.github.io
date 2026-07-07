@@ -2,7 +2,6 @@ import React from "react";
 import { motion, Variants } from "framer-motion";
 import { GlassCard } from "../components/magicui/GlassCard";
 import {
-  Code2,
   BookOpen,
   Award,
   Download,
@@ -13,6 +12,7 @@ import {
 } from "lucide-react";
 import { TimelineItem } from "../components/magicui/TimelineItem";
 import { SOCIAL_LINKS, PUBLICATIONS, TALKS_AND_WORKSHOPS, TECHNICAL_STACK, ACCOMPLISHMENTS, CAREER_TIMELINE } from '../constants';
+import { assetPath } from "../site";
 
 const AboutView: React.FC = () => {
   const container: Variants = {
@@ -65,7 +65,19 @@ const AboutView: React.FC = () => {
               </div>
 
               <div className="w-42 h-40 rounded-2xl mb-6 mx-auto flex items-center justify-center overflow-hidden">
-                <img src="/Ged.png" alt="Gedion Disassa - Picture in Blue Suit" className="w-full h-full object-cover object-center" />
+                <picture className="block w-full h-full">
+                  <source srcSet={assetPath("Ged-384.avif")} type="image/avif" />
+                  <source srcSet={assetPath("Ged-384.webp")} type="image/webp" />
+                  <img
+                    src={assetPath("Ged-384.png")}
+                    alt="Gedion Disassa"
+                    width="384"
+                    height="464"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </picture>
               </div>
 
               <div className="text-center mb-8">
@@ -129,7 +141,7 @@ const AboutView: React.FC = () => {
                   onClick={
                     () => {
                       const link = document.createElement("a");
-                      link.href = "/2026.01 Gedion CV.pdf";
+                      link.href = assetPath("2026.01 Gedion CV.pdf");
                       link.download = "Gedion_Disassa_Resume.pdf";
                       document.body.appendChild(link);
                       link.click();

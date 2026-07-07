@@ -81,7 +81,7 @@ const Dock: React.FC = () => {
           <DockIcon
             key={item.path}
             item={item}
-            isActive={location.pathname === item.path}
+            isActive={location.pathname === item.path || (item.path !== "/" && location.pathname.startsWith(`${item.path}/`))}
             onClick={() => navigate(item.path)}
           />
         ))}

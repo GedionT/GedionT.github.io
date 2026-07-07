@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { GlassCard } from "../components/magicui/GlassCard";
 import {
   ArrowLeft,
@@ -15,8 +16,10 @@ import {
   Terminal
 } from "lucide-react";
 import Seo from "../components/Seo";
-import { ArticleMetadata } from "@/types";
-import { articleRegistry } from "../constants";
+import type { ArticleMetadata } from "@/types";
+import { articleRegistry, PROJECTS } from "../constants";
+import { projectPath, slugify, tagPath } from "../slugs";
+import { assetPath, canonicalUrl } from "../site";
 
 // Custom Hook for Scalable Content Management
 const useArticle = (article: ArticleMetadata | null) => {
@@ -33,7 +36,7 @@ const useArticle = (article: ArticleMetadata | null) => {
     // Simulate high-speed data transmission for aesthetic
     const loadData = async () => {
       try {
-        const res = await fetch(article.filePath);
+        const res = await fetch(assetPath(article.filePath));
         if (!res.ok) throw new Error("Link unstable");
         const text = await res.text();
         setContent(text);
@@ -51,8 +54,46 @@ const useArticle = (article: ArticleMetadata | null) => {
 };
 
 const BlogsView: React.FC = () => {
-  const [selectedMeta, setSelectedMeta] = useState<ArticleMetadata | null>(null);
+  const navigate = useNavigate();
+  const { articleId, tagSlug } = useParams();
+  const selectedMeta = articleId
+    ? articleRegistry.find((article) => article.id === articleId) ?? null
+    : null;
   const { content, loading, error } = useArticle(selectedMeta);
+  const blogTags = useMemo(
+    () => ["All", ...Array.from(new Set(articleRegistry.flatMap((article) => article.tags))).sort()],
+    []
+  );
+  const tagFromSlug = tagSlug
+    ? blogTags.find((tag) => tag !== "All" && slugify(tag) === tagSlug) ?? null
+    : null;
+  const activeTag = tagFromSlug ?? "All";
+  const filteredArticles = activeTag === "All"
+    ? articleRegistry
+    : articleRegistry.filter((article) => article.tags.includes(activeTag));
+  const hashtag = (tag: string) => `#${slugify(tag)}`;
+  const listTitle = tagFromSlug ? `${hashtag(tagFromSlug)} essays` : "Quick Reads";
+  const seoTitle = selectedMeta
+    ? selectedMeta.title
+    : tagFromSlug
+      ? `${tagFromSlug} Essays`
+      : "Engineering Logs & Research";
+  const seoDescription = selectedMeta
+    ? selectedMeta.excerpt
+    : tagFromSlug
+      ? `Essays by Gedion Disassa tagged ${tagFromSlug}, covering related systems, AI, governance, and technology ideas.`
+      : "A deep dive into distributed systems architecture, AI orchestration, and spatial web engineering by Gedion Disassa.";
+  const canonical = selectedMeta
+    ? canonicalUrl(`/blogs/${selectedMeta.id}`)
+    : tagFromSlug
+      ? canonicalUrl(tagPath(tagFromSlug))
+      : canonicalUrl("/blogs");
+  const relatedArticles = selectedMeta
+    ? articleRegistry.filter((article) => selectedMeta.relatedArticles?.includes(article.id))
+    : [];
+  const relatedProjects = selectedMeta
+    ? PROJECTS.filter((project) => selectedMeta.relatedProjects?.includes(project.slug))
+    : [];
 
   const mdComponents = {
     h1: ({ children }: any) => <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 tracking-tighter">{children}</h1>,
@@ -89,10 +130,10 @@ const BlogsView: React.FC = () => {
   return (
     <>
       <Seo
-        title={selectedMeta ? selectedMeta.title : "Engineering Logs & Research"}
-        description={selectedMeta ? selectedMeta.excerpt : "A deep dive into distributed systems architecture, AI orchestration, and spatial web engineering by Gedion Disassa."}
-        canonical={`https://gediont.github.io/#blogs${selectedMeta ? `?id=${selectedMeta.id}` : ""}`}
-        type="article"
+        title={seoTitle}
+        description={seoDescription}
+        canonical={canonical}
+        type={selectedMeta ? "article" : "website"}
       />
       <div className="max-w-4xl w-full h-[85vh] py-12 px-4 flex flex-col relative">
         <AnimatePresence mode="wait">
@@ -103,52 +144,71 @@ const BlogsView: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
             >
-              <div className="mb-12">
+              <div className="mb-8">
                 <div className="flex items-center gap-3 text-blue-600 mb-2">
                   <Cpu size={18} />
                   <span className="font-mono text-xs tracking-[0.4em] uppercase">Knowledge log</span>
                 </div>
-                <h1 className="text-5xl font-black text-slate-900 tracking-tighter">Quick Reads</h1>
+                <h1 className="text-5xl font-black text-slate-900 tracking-tighter">{listTitle}</h1>
+              </div>
+
+              <div className="flex gap-2 overflow-x-auto pb-4 mb-8 scrollbar-hide">
+                {blogTags.map((tag) => (
+                  <Link
+                    key={tag}
+                    to={tag === "All" ? "/blogs" : tagPath(tag)}
+                    className={`flex items-center gap-1.5 px-3 py-2 rounded-xl border text-[10px] font-black uppercase tracking-widest whitespace-nowrap transition-all ${
+                      activeTag === tag
+                        ? "bg-slate-900 text-white border-slate-900 shadow-xl"
+                        : "bg-white text-slate-500 border-slate-200 hover:border-blue-300 hover:text-blue-600"
+                    }`}
+                    aria-current={activeTag === tag ? "page" : undefined}
+                  >
+                    <Hash size={12} />
+                    {tag === "All" ? "All" : hashtag(tag)}
+                  </Link>
+                ))}
               </div>
 
               <div className="grid gap-4">
-                {articleRegistry.map((article) => (
+                {filteredArticles.map((article) => (
                   <article
                     key={article.id}
-                    onClick={() => setSelectedMeta(article)}
-                    className="group cursor-pointer"
+                    className="group"
                   >
-                    <GlassCard className="!p-8 hover:border-blue-400 transition-all border-slate-100 group">
-                      <div className="flex flex-col gap-4">
-                        <div className="flex items-center gap-4 text-[10px] font-mono text-slate-400 uppercase tracking-widest">
-                          <span className="flex items-center gap-1.5 text-blue-500 font-bold"><Hash size={12} /> {article.id}</span>
-                          <span className="h-1 w-1 rounded-full bg-slate-200" />
-                          <span className="flex items-center gap-1.5"><Calendar size={12} /> {article.date}</span>
-                        </div>
-
-                        <div className="flex justify-between items-start gap-8">
-                          <div className="space-y-3">
-                            <h2 className="text-3xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">
-                              {article.title}
-                            </h2>
-                            <p className="text-slate-500 text-sm font-light leading-relaxed line-clamp-2 max-w-2xl">
-                              {article.excerpt}
-                            </p>
+                    <Link to={`/blogs/${article.id}`} className="block">
+                      <GlassCard className="!p-8 hover:border-blue-400 transition-all border-slate-100 group">
+                        <div className="flex flex-col gap-4">
+                          <div className="flex items-center gap-4 text-[10px] font-mono text-slate-400 uppercase tracking-widest">
+                            <span className="flex items-center gap-1.5 text-blue-500 font-bold"><Hash size={12} /> {article.id}</span>
+                            <span className="h-1 w-1 rounded-full bg-slate-200" />
+                            <span className="flex items-center gap-1.5"><Calendar size={12} /> {article.date}</span>
                           </div>
-                          <div className="hidden md:flex flex-col items-center justify-center p-4 bg-slate-50 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all">
-                            <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+
+                          <div className="flex justify-between items-start gap-8">
+                            <div className="space-y-3">
+                              <h2 className="text-3xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">
+                                {article.title}
+                              </h2>
+                              <p className="text-slate-500 text-sm font-light leading-relaxed line-clamp-2 max-w-2xl">
+                                {article.excerpt}
+                              </p>
+                            </div>
+                            <div className="hidden md:flex flex-col items-center justify-center p-4 bg-slate-50 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all">
+                              <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+                            </div>
+                          </div>
+
+                          <div className="flex gap-2 pt-4">
+                            {article.tags.map(tag => (
+                              <span key={tag} className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-400 border border-slate-100 px-2 py-1 rounded-md">
+                                <Tag size={10} /> {tag}
+                              </span>
+                            ))}
                           </div>
                         </div>
-
-                        <div className="flex gap-2 pt-4">
-                          {article.tags.map(tag => (
-                            <span key={tag} className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-400 border border-slate-100 px-2 py-1 rounded-md">
-                              <Tag size={10} /> {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </GlassCard>
+                      </GlassCard>
+                    </Link>
                   </article>
                 ))}
               </div>
@@ -156,14 +216,14 @@ const BlogsView: React.FC = () => {
           ) : (
             <motion.div
               key="detail"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
+              initial={{ scale: 0.95 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.95 }}
             >
 
               <div className="flex items-center justify-between mb-8">
                 <button
-                  onClick={() => setSelectedMeta(null)}
+                  onClick={() => navigate("/blogs")}
                   className="group flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors font-bold uppercase tracking-widest text-[10px]"
                 >
                   <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
@@ -174,9 +234,9 @@ const BlogsView: React.FC = () => {
                 </div>
               </div>
 
-              <GlassCard className="flex-1 overflow-y-auto scrollbar-hide !p-0 border-slate-100 relative">
+              <GlassCard solid className="flex-1 overflow-y-auto scrollbar-hide !p-0 border-slate-100 relative">
                 {loading && (
-                  <div className="absolute inset-0 z-50 bg-white/80 backdrop-blur-md flex flex-col items-center justify-center space-y-6">
+                  <div className="absolute inset-0 z-50 bg-white flex flex-col items-center justify-center space-y-6">
                     <div className="relative">
                       <Cpu className="text-blue-600 animate-pulse" size={48} />
                       <div className="absolute inset-0 border-2 border-blue-500/20 rounded-full animate-ping scale-150" />
@@ -206,13 +266,46 @@ const BlogsView: React.FC = () => {
                   </header>
 
                   <div className="markdown-content">
-                    <ReactMarkdown
-                      remarkPlugins={[remarkGfm]}
-                      components={mdComponents}
-                    >
-                      {content}
-                    </ReactMarkdown>
+                    {error ? (
+                      <p className="text-rose-500 text-lg leading-relaxed mb-6 font-light">{error}</p>
+                    ) : (
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        components={mdComponents}
+                      >
+                        {content}
+                      </ReactMarkdown>
+                    )}
                   </div>
+
+                  {(relatedArticles.length > 0 || relatedProjects.length > 0) && (
+                    <aside className="mt-12 pt-8 border-t border-slate-100 grid gap-8 md:grid-cols-2">
+                      {relatedArticles.length > 0 && (
+                        <div>
+                          <h2 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">Related essays</h2>
+                          <div className="flex flex-col gap-2">
+                            {relatedArticles.map((article) => (
+                              <Link key={article.id} to={`/blogs/${article.id}`} className="text-sm font-bold text-blue-600 hover:text-slate-900">
+                                {article.title}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                      {relatedProjects.length > 0 && (
+                        <div>
+                          <h2 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">Related projects</h2>
+                          <div className="flex flex-col gap-2">
+                            {relatedProjects.map((project) => (
+                              <Link key={project.slug} to={projectPath(project)} className="text-sm font-bold text-blue-600 hover:text-slate-900">
+                                {project.title}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </aside>
+                  )}
 
                 </div>
               </GlassCard>
